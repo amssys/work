@@ -16,6 +16,7 @@ public class Work110 {
 			throw new IllegalArgumentException("引数がNULLです");
 		}
 		/** 解答を記入 */
+		// 2017年3月11日に記入
 		return null;
 	}
 
