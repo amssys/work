@@ -1,5 +1,6 @@
 package com.ams.work110;
 
+
 /**
  * Work110の解答<BR>
  */
@@ -16,7 +17,17 @@ public class Work110 {
 			throw new IllegalArgumentException("引数がNULLです");
 		}
 		/** 解答を記入 */
-		return null;
+
+		int c = str.length();
+		char[] charact;
+		charact = new char[c];
+		for(int i = 0; i < c ; i++){
+			char x = str.charAt(i);
+			charact[i] = x;
+			}
+//		char[] c= str.toCharArray();
+
+		return charact;
 	}
 
 	/**
@@ -36,7 +47,17 @@ public class Work110 {
 			throw new IllegalArgumentException("引数がNULLです");
 		}
 		/** 解答を記入 */
-		return 0;
+		int x = 0;
+		if(str1 == str2){
+			x =0;
+		}else if(str1.equals(str2)){
+			x =1;
+		}else if(str1.equalsIgnoreCase(str2)){
+			x = 2;
+		}else{
+			x = 9;
+		}
+		return x;
 	}
 
 	/**
@@ -56,7 +77,19 @@ public class Work110 {
 			throw new IllegalArgumentException("引数がNULLです");
 		}
 		/** 解答を記入 */
-		return null;
+
+		int i = start + length;
+		int s = str.length();
+		if(s < i){
+			throw new IllegalArgumentException("切り取り範囲が不正です");
+		}else if(0 < start || start < s){
+			throw new IllegalArgumentException("切り取り範囲が不正です");
+		}else if(0 < length){
+			throw new IllegalArgumentException("切り取り範囲が不正です");
+		}
+		String x = str.substring(start,i);
+
+		return x;
 	}
 
 	/**
