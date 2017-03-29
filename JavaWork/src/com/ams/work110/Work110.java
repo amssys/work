@@ -47,17 +47,17 @@ public class Work110 {
 			throw new IllegalArgumentException("引数がNULLです");
 		}
 		/** 解答を記入 */
-		int x = 0;
+		int resultNo = 0;
 		if(str1 == str2){
-			x =0;
+			resultNo =0;
 		}else if(str1.equals(str2)){
-			x =1;
+			resultNo =1;
 		}else if(str1.equalsIgnoreCase(str2)){
-			x = 2;
+			resultNo = 2;
 		}else{
-			x = 9;
+			resultNo = 9;
 		}
-		return x;
+		return resultNo;
 	}
 
 	/**
@@ -78,18 +78,18 @@ public class Work110 {
 		}
 		/** 解答を記入 */
 
-		int i = start + length;
-		int s = str.length();
-		if(s < i){
+		int end = start + length;
+		int range = str.length();
+		if(range < end - 1){
 			throw new IllegalArgumentException("切り取り範囲が不正です");
-		}else if(0 < start || start < s){
+		}else if(0 >= start || start > range){
 			throw new IllegalArgumentException("切り取り範囲が不正です");
-		}else if(0 < length){
+		}else if(0 > length){
 			throw new IllegalArgumentException("切り取り範囲が不正です");
 		}
-		String x = str.substring(start,i);
+		String resultStr = str.substring(start - 1,end - 1);
 
-		return x;
+		return resultStr;
 	}
 
 	/**
@@ -109,6 +109,27 @@ public class Work110 {
 			throw new IllegalArgumentException("判定対象がありません");
 		}
 		/** 解答を記入 */
-		return false;
+
+		String Number =telNo.trim();
+		if(Number.length() != 13){
+			throw new IllegalArgumentException("●文字数が不正です");
+		}else if(Number.substring(3,4) !="-"  ){
+			throw new IllegalArgumentException("●区切り位置が不正です");
+		}else if(Number.substring(8,9) != "-" ){
+			throw new IllegalArgumentException("●区切り位置が不正です");
+		}
+
+
+		boolean anser = false;
+
+		if(Number.startsWith("090")){
+			anser = true;
+		}else if(Number.startsWith("080")){
+			anser = true;
+		}else if(Number.startsWith("070")){
+			anser = true;
+		}
+
+		return anser;
 	}
-}
+	}
