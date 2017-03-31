@@ -113,10 +113,10 @@ public class Work110 {
 		String Number =telNo.trim();
 		if(Number.length() != 13){
 			throw new IllegalArgumentException("●文字数が不正です");
-		}else if(Number.substring(3,4) != "-"  ){
-			throw new IllegalArgumentException("●区切り位置が不正です");
-		}else if(Number.substring(8,9) != "-" ){
-			throw new IllegalArgumentException("●区切り位置が不正です");
+//		}else if(Number.substring(3,4) != "-"  ){
+//			throw new IllegalArgumentException("●区切り位置が不正です");
+//		}else if(Number.substring(8,9) != "-" ){
+//			throw new IllegalArgumentException("●区切り位置が不正です");
 		}
 
 
