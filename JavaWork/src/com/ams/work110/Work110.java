@@ -111,13 +111,23 @@ public class Work110 {
 		/** 解答を記入 */
 
 		String Number =telNo.trim();
+		String FirstLine = Number.substring(3,4);
+		String SecondLine = Number.substring(8,9);
 		if(Number.length() != 13){
 			throw new IllegalArgumentException("●文字数が不正です");
-//		}else if(Number.substring(3,4) != "-"  ){
-//			throw new IllegalArgumentException("●区切り位置が不正です");
-//		}else if(Number.substring(8,9) != "-" ){
-//			throw new IllegalArgumentException("●区切り位置が不正です");
 		}
+		if(Number.matches("[0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]")){
+		}else{
+			throw new IllegalArgumentException("●半角数字以外が使用されています");
+		}
+		if(FirstLine.equals("-") ){
+		}else{
+			throw new IllegalArgumentException("●区切り位置が不正です");
+		}
+		if(SecondLine.equals("-") ){
+			}else{
+				throw new IllegalArgumentException("●区切り位置が不正です");
+			}
 
 
 		boolean anser = false;
