@@ -88,33 +88,35 @@ public class Work120Test {
 		Work120 work = new Work120();
 		String expected = "2";
 		String[] hairetu = {"1",  "2",  "3"};
-		String actual = average.sum(hairetu);
+		String actual = work.average(hairetu);
 		assertThat(actual, is(expected));
 	}
 
 	@Test
 	public void averageのケース5() throws Exception {
 		Work120 work = new Work120();
-		String expected = "1.333";
+		String expected = "2.133";
 		String[] hairetu = {"1",  "2",  "3.4"};
-		String actual = average.sum(hairetu);
+		String actual = work.average(hairetu);
 		assertThat(actual, is(expected));
 	}
 
 	@Test
 	public void averageのケース6() throws Exception {
 		Work120 work = new Work120();
-		String expected = "4";
+		String expected = "1.333";
 		String[] hairetu = {"-1",  "2",  "3"};
-		String actual = average.sum(hairetu);
+		String actual = work.average(hairetu);
 		assertThat(actual, is(expected));
 	}
 
 	@Test(expected = IllegalArgumentException.class)
 	public void averageのケース7() throws Exception {
 		Work120 work = new Work120();
+		String expected = "5E+11";
 		String[] hairetu = {"999999999999",  "1"};
-		work.average(hairetu);
+		String actual = work.average(hairetu);
+		assertThat(actual, is(expected));
 	}
 
 
