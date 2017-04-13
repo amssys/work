@@ -110,13 +110,13 @@ public class Work120Test {
 		assertThat(actual, is(expected));
 	}
 
-	@Test(expected = IllegalArgumentException.class)
+	@Test
 	public void averageのケース7() throws Exception {
 		Work120 work = new Work120();
 		String expected = "5E+11";
 		String[] hairetu = {"999999999999",  "1"};
 		String actual = work.average(hairetu);
-		assertThat(actual, is(expected));
+		assertEquals(actual, expected);
 	}
 
 
