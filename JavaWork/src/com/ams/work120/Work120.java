@@ -45,7 +45,7 @@ public class Work120 {
  * 平均計算を行う<BR>
  * 作成者:mizobata<BR>
  * @param nums[] 文字列<BR>
- * @return anser 平均値 BR>
+ * @return answer 平均値 BR>
  * @throws IllegalArgumentException 引数がNULLの場合<BR>
  */
 	public  String average(String[] nums) throws IllegalArgumentException {
@@ -56,34 +56,23 @@ public class Work120 {
 			throw new IllegalArgumentException("●引数が空です");
 		}
 
-		String anser = "0";
-		BigDecimal number2 = new BigDecimal(nums.length);
+		String answer = "0";
+		BigDecimal numlength = new BigDecimal(nums.length);
 		BigDecimal sum2 = new BigDecimal("0");
-		BigDecimal str = new BigDecimal("0");
-		String numberS = "0";
+		BigDecimal cleandivide = new BigDecimal("0");
 
-//		for(int i = 0; i < nums.length; i++){
-//			numberS = nums[i];
-//			try{
-//				Integer.parseInt(numberS);
-//			}catch(NumberFormatException e){
-//				throw new IllegalArgumentException("●引数の内容に数字以外が含まれていま");
-//			}
-//		}
+
 
 		for(int i = 0; i < nums.length; i++){
 			BigDecimal number = new BigDecimal(nums[i]);
 			BigDecimal add = sum2.add(number);
 			sum2 = add;
 
-//			if(numberI > Integer.MAX_VALUE){
-//				throw new IllegalArgumentException("●因数の内容が大きすぎます");
-//		}
 	}
-		BigDecimal divide = sum2.divide(number2,3, BigDecimal.ROUND_HALF_UP);
-		str = divide.stripTrailingZeros();
-		anser = String.valueOf(str);
+		BigDecimal divide = sum2.divide(numlength,3, BigDecimal.ROUND_HALF_UP);
+		cleandivide = divide.stripTrailingZeros();  //いらない０を消す
+		answer = String.valueOf(cleandivide);
 
-		return anser;
+		return answer;
 }
 }
