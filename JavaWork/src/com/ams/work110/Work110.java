@@ -110,36 +110,36 @@ public class Work110 {
 		}
 		/** 解答を記入 */
 
-		String Number =telNo.trim();
-		String FirstLine = Number.substring(3,4);
-		String SecondLine = Number.substring(8,9);
-		if(Number.length() != 13){
+		String number =telNo.trim();
+		String firstLine = number.substring(3,4);
+		String secondLine = number.substring(8,9);
+		if(number.length() != 13){
 			throw new IllegalArgumentException("●文字数が不正です");
 		}
-		if(Number.matches("[0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]")){
+		if(number.matches("[0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]")){
 		}else{
 			throw new IllegalArgumentException("●半角数字以外が使用されています");
 		}
-		if(FirstLine.equals("-") ){
+		if(firstLine.equals("-") ){
 		}else{
 			throw new IllegalArgumentException("●区切り位置が不正です");
 		}
-		if(SecondLine.equals("-") ){
+		if(secondLine.equals("-") ){
 			}else{
 				throw new IllegalArgumentException("●区切り位置が不正です");
 			}
 
 
-		boolean anser = false;
+		boolean answer = false;
 
-		if(Number.startsWith("090")){
-			anser = true;
-		}else if(Number.startsWith("080")){
-			anser = true;
-		}else if(Number.startsWith("070")){
-			anser = true;
+		if(number.startsWith("090")){
+			answer = true;
+		}else if(number.startsWith("080")){
+			answer = true;
+		}else if(number.startsWith("070")){
+			answer = true;
 		}
 
-		return anser;
+		return answer;
 	}
 	}

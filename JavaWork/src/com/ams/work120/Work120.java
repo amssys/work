@@ -70,7 +70,7 @@ public class Work120 {
 
 	}
 		BigDecimal divide = sum2.divide(numlength,3, BigDecimal.ROUND_HALF_UP);
-		cleandivide = divide.stripTrailingZeros();  //いらない０を消す
+		cleandivide = divide.stripTrailingZeros();
 		answer = String.valueOf(cleandivide);
 
 		return answer;
