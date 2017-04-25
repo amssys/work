@@ -91,16 +91,20 @@ public class Work130Test {
 	@Test
 	public void createDateのケース2() throws Exception {
 		Work130 work = new Work130();
-		Date expected = Mon Jan 01 09:00:00 JST 1900;// これをDateで合わせるか
-		Date actual = work.createDate(1900,1,1);	//	これをStringであわせるか 変換する
+		String expected = ("Mon Jan 01 09:00:00 JST 1900");
+		Date time = work.createDate(1900,1,1);
+		String actual = time.toString();
 		assertEquals(actual, expected);
 	}
 
 	@Test
 	public void createDateのケース3() throws Exception {
 		Work130 work = new Work130();
-//		Date expected = Mon Jan 01 09:00:00 JST 1900;
-		Date actual = work.createDate(2100,1,1);
+		String expected = ("Fri Dec 31 09:00:00 JST 2100");
+		Date time = work.createDate(2100,12,31);
+		String actual = time.toString();
+		assertEquals(actual, expected);
+
 	}
 
 	@Test(expected = IllegalArgumentException.class)
@@ -118,8 +122,11 @@ public class Work130Test {
 	@Test
 	public void createDateのケース6() throws Exception {
 		Work130 work = new Work130();
-//		Date expected = Mon Jan 01 09:00:00 JST 1900; 入れ方！
-		Date actual = work.createDate(1900,12,1);
+		String expected = ("Sat Dec 01 09:00:00 JST 1900");
+		Date time = work.createDate(1900,12,1);
+		String actual = time.toString();
+		assertEquals(actual, expected);
+
 	}
 
 	@Test(expected = IllegalArgumentException.class)
@@ -149,17 +156,34 @@ public class Work130Test {
 	@Test
 	public void createDateのケース11() throws Exception {
 		Work130 work = new Work130();
-//		Date expected = Mon Jan 01 09:00:00 JST 1900; 入れ方！
-		Date actual = work.createDate(2012,2,29);
+		String expected = ("Wed Feb 29 09:00:00 JST 2012");
+		Date time = work.createDate(2012,2,29);
+		String actual = time.toString();
+		assertEquals(actual, expected);
 	}
 
 	@Test
 	public void createDateのケース12() throws Exception {
 		Work130 work = new Work130();
-//		Date expected = Mon Jan 01 09:00:00 JST 1900; 入れ方！
-		Date actual = work.createDate(2012,5,1);
+		String expected = ("Tue May 01 09:00:00 JST 2012");
+		Date time = work.createDate(2012,5,1);
+		String actual = time.toString();
+		assertEquals(actual, expected);
 	}
 
+	@Test(expected = IllegalArgumentException.class)
+	public void dataToStringのケース1() throws Exception {
+		Work130 work = new Work130();
+		work.dateToString(null);
+	}
+
+	@Test
+	public void dateToStringのケース2() throws Exception {
+		Work130 work = new Work130();
+		String excepted = ("1970-01-02");
+		String actual   = work.dateToString(new Date(24L*60L*60L*1000L));
+		assertEquals(actual, excepted);
+	}
 
 
 

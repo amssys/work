@@ -1,5 +1,6 @@
 package com.ams.work130;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -62,12 +63,13 @@ public class Work130 {
 
 		Calendar cal = Calendar.getInstance();
 		Date date = new Date();
+		cal.clear();
 
 
 		try{
 		cal.setLenient(false);
 
-		cal.set(year,month,day);
+		cal.set(year,month - 1,day,9,0,0);
 
 		date = cal.getTime();
 		}catch(NumberFormatException e){
@@ -77,4 +79,18 @@ public class Work130 {
 
 		return date;
 	}
+
+	public  String dateToString(Date date) throws IllegalArgumentException {
+		if(date == null){
+			throw new IllegalArgumentException("日付オブジェクトがありません");
+	}
+		String hiduke = "";
+		SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-DD");
+		hiduke = sdf1.format(date);
+		hiduke = hiduke.toString();
+
+		return hiduke;
 }
+}
+
+
