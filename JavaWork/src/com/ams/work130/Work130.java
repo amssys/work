@@ -51,7 +51,13 @@ public class Work130 {
 		return dates;
 	}
 
-
+	/**
+	 * 日付オブジェクトを生成する<BR>
+	 * 作成者:mizobata<BR>
+	 * @param  year month day 日付 <BR>
+	 * @return date BR>
+	 * @throws IllegalArgumentException 引数がNULLの場合<BR>
+	 */
 	public  Date createDate(int year, int month, int day) throws IllegalArgumentException {
 		if(2100 < year || year < 1900){
 			throw new IllegalArgumentException("年が不正です");
@@ -79,7 +85,13 @@ public class Work130 {
 
 		return date;
 	}
-
+	/**
+	 * 日付オブジェクトを「YYYY-MM-DD」文字列に変換する<BR>
+	 * 作成者:mizobata<BR>
+	 * @param date 日付ｵﾌﾞｼﾞｪｸﾄ <BR>
+	 * @return hiduke BR>
+	 * @throws IllegalArgumentException 引数がNULLの場合<BR>
+	 */
 	public  String dateToString(Date date) throws IllegalArgumentException {
 		if(date == null){
 			throw new IllegalArgumentException("日付オブジェクトがありません");
@@ -91,6 +103,71 @@ public class Work130 {
 
 		return hiduke;
 }
+
+	/**
+	 * 「YYYY-MM-DD」を日付オブジェクトに変換する<BR>
+	 * 作成者:mizobata<BR>
+	 * @param ymd 日付<BR>
+	 * @return dateBR>
+	 * @throws IllegalArgumentException 引数がNULLの場合<BR>
+	 */
+	public  Date stringToDate(String ymd) throws IllegalArgumentException {
+		if(ymd == null){
+			throw new IllegalArgumentException("日付文字列がありません");
+	}
+		if(ymd.matches("[0-9][0-9][0-9][0-9][-][0-9][0-9][-][0-9][0-9]")){
+		}else{
+			throw new IllegalArgumentException("日付文字列の形式が不正です");
+		}
+
+		int year  = Integer.parseInt(ymd.substring(0,4));
+		int month = Integer.parseInt(ymd.substring(5,7));
+		int day   = Integer.parseInt(ymd.substring(8,10));;
+
+		Calendar cal = Calendar.getInstance();
+		Date date = new Date();
+		cal.clear();
+
+		try{
+			cal.setLenient(false);
+
+			cal.set(year,month - 1,day,9,0,0);
+
+			date = cal.getTime();
+		}catch(NumberFormatException e){
+			throw new IllegalArgumentException("存在しない日付です");
+		}
+//		Date date = new Date();
+//		SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
+//
+//		try{
+//		sdf1.setLenient(false);
+//		sdf1.parse(ymd);
+//		}catch(NumberFormatException e){
+//			throw new IllegalArgumentException("存在しない日付です");
+//		}catch(ParseException e){
+//			throw new IllegalArgumentException("日付文字列の形式が不正です.");
+//		}
+		return date;
+		}
+
+	/**
+	 * 月末日付を「YYYY-MM-DD」文字列で返します<BR>
+	 * 作成者:mizobata<BR>
+	 * @param  year month 日付<BR>
+	 * @return hiduke BR>
+	 * @throws IllegalArgumentException 引数がNULLの場合<BR>
+	 */
+	public  String getLasDayOfMonth(int year,int month) throws IllegalArgumentException {
+		if(2100 < year || year < 1900){
+			throw new IllegalArgumentException("年が不正です");
+		}else if(12 < month || month < 1){
+			throw new IllegalArgumentException("月が不正です");
+		}
+		String ymd = "";
+
+	return ymd;
+	}
 }
 
 
