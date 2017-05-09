@@ -165,6 +165,34 @@ public class Work130 {
 			throw new IllegalArgumentException("月が不正です");
 		}
 		String ymd = "";
+		SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-DD");
+
+
+		Calendar cal = Calendar.getInstance();
+
+		cal.clear();
+
+
+		cal.set(year,month - 1);
+		int lastDay =cal.getActualMaximum(Calendar.DATE);
+		cal.set(Calendar.DATE,lastDay);
+		ymd = sdf1.format(cal.getTime());
+//		try{
+//		cal.setLenient(false);
+//
+//		cal.set(year,month - 1,1);
+//		int lastDay =cal.getActualMaximum(Calendar.DATE);
+//
+//		cal.set(year,month,lastDay);
+//
+//		date = cal.getTime();
+//
+//		ymd = sdf1.format(date);
+//		ymd = ymd.toString();
+//
+//		}catch(NumberFormatException e){
+//			throw new IllegalArgumentException("存在しない日付です");
+//		}
 
 	return ymd;
 	}
