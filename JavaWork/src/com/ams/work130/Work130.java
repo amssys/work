@@ -132,6 +132,8 @@ public class Work130 {
 			cal.setLenient(false);
 
 			cal.set(year,month - 1,day,9,0,0);
+			//set(int year, int month, int date, int hourOfDay, int minute, int second)
+
 
 			date = cal.getTime();
 		}catch(NumberFormatException e){
@@ -165,18 +167,43 @@ public class Work130 {
 			throw new IllegalArgumentException("月が不正です");
 		}
 		String ymd = "";
-		SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-DD");
+		String month1;
+		int lastDay = 0;
+//		SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-DD");
 
 
 		Calendar cal = Calendar.getInstance();
 
 		cal.clear();
 
+		try{
+		cal.setLenient(false);
 
-		cal.set(year,month - 1);
-		int lastDay =cal.getActualMaximum(Calendar.DATE);
+		cal.set(Calendar.YEAR,year);
+		cal.set(Calendar.MONTH,month - 1);
+		//public void set(int field, int value)
+
+		lastDay =cal.getActualMaximum(Calendar.DAY_OF_MONTH);
 		cal.set(Calendar.DATE,lastDay);
-		ymd = sdf1.format(cal.getTime());
+
+		}catch(NumberFormatException e){
+		throw new IllegalArgumentException("存在しない日付です");
+		}
+
+		if(month < 10){
+			month1 = String.valueOf(month);
+			month1 = "0" + month1;
+
+		}else{
+			month1 = String.valueOf(month);
+
+		}
+		ymd = year + "-" + month1 + "-" + lastDay;
+
+//		ymd = sdf1.format(cal.getTime()); ←ここでlastDayの数値が変更されていた。
+
+
+
 //		try{
 //		cal.setLenient(false);
 //

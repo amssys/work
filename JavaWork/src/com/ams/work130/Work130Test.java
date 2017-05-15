@@ -279,14 +279,14 @@ public class Work130Test {
 	public void getLasDayOfMonthのケース9() throws Exception {
 		Work130 work = new Work130();
 		String expected = ("2012-01-31");
-		String actual = work.getLasDayOfMonth(1900,1);
+		String actual = work.getLasDayOfMonth(2012,1);
 		assertEquals(actual, expected);
 	}
 	@Test
 	public void getLasDayOfMonthのケース10() throws Exception {
 		Work130 work = new Work130();
 		String expected = ("2012-02-29");
-		String actual = work.getLasDayOfMonth(2012,1);
+		String actual = work.getLasDayOfMonth(2012,2);
 		assertEquals(actual, expected);
 	}
 	@Test
