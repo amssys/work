@@ -1,7 +1,8 @@
 package com.ams.work210;
 
-import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
+
+import java.math.BigDecimal;
 
 import org.junit.Test;
 
@@ -41,25 +42,32 @@ public class Work210Test {
 	@Test
 	public void createRecordのケース6() throws Exception {
 		Work210 work = new Work210();
-		String expected = "戻り値";
 		String[] hairetu ={"4903110006770",  "毎朝の食パン",  "138"};
-		String actual = work.createRecord(hairetu);
-		assertThat(actual, is(expected));
+		ProductDto dto = work.createRecord(hairetu);
+		BigDecimal deci = new BigDecimal("138");
+		assertEquals("4903110006770",dto.getCode());
+		assertEquals("毎朝の食パン",dto.getName());
+		assertEquals(deci,dto.getPrice());
 	}
 	@Test
 	public void createRecordのケース7() throws Exception {
 		Work210 work = new Work210();
-		String expected = "戻り値";
 		String[] hairetu ={"4903110006770",  null,  "138"};
-		String actual = work.createRecord(hairetu);
-		assertThat(actual, is(expected));
+		ProductDto dto = work.createRecord(hairetu);
+		BigDecimal deci = new BigDecimal("138");
+		assertEquals("4903110006770",dto.getCode());
+		assertEquals(null,dto.getName());
+		assertEquals(deci,dto.getPrice());
+
 	}
 	@Test
 	public void createRecordのケース8() throws Exception {
 		Work210 work = new Work210();
-		String expected = "戻り値";
 		String[] hairetu ={"4903110006770",  "毎朝の食パン",  null};
-		String actual = work.createRecord(hairetu);
-		assertThat(actual, is(expected));
+		ProductDto dto = work.createRecord(hairetu);
+		assertEquals("4903110006770",dto.getCode());
+		assertEquals("毎朝の食パン",dto.getName());
+		assertEquals(null,dto.getPrice());
+
 	}
 }
