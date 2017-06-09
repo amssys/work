@@ -57,7 +57,7 @@ public class Work130Test {
 	public void extractYMDのケース7() throws Exception {
 		Work130 work = new Work130();
 		Calendar cal = Calendar.getInstance();
-		int expected = cal.get(Calendar.YEAR);//実行時のdate
+		int expected = cal.get(Calendar.YEAR);
 		int actual = work.extractYMD(new Date(),"Y");
 		assertEquals(actual, expected);
 	}
@@ -66,7 +66,7 @@ public class Work130Test {
 	public void extractYMDのケース8() throws Exception {
 		Work130 work = new Work130();
 		Calendar cal = Calendar.getInstance();
-		int expected = cal.get(Calendar.MONTH) + 1;//実行時のdate
+		int expected = cal.get(Calendar.MONTH) + 1;
 		int actual = work.extractYMD(new Date(),"M");
 		assertEquals(actual, expected);
 	}
@@ -75,12 +75,11 @@ public class Work130Test {
 	public void extractYMDのケース9() throws Exception {
 		Work130 work = new Work130();
 		Calendar cal = Calendar.getInstance();
-		int expected = cal.get(Calendar.DATE);//実行時のdate
+		int expected = cal.get(Calendar.DATE);
 		int actual = work.extractYMD(new Date(),"D");
 		assertEquals(actual, expected);
 	}
-//-------------------------------------------------------------------------------------------------
-//-------------------------------------------------------------------------------------------------
+
 
 	@Test(expected = IllegalArgumentException.class)
 	public void createDateのケース1() throws Exception {

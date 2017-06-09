@@ -12,22 +12,16 @@ public class Work210{
 
 		ProductDto dto = new ProductDto();
 
-		int youso = 0;
-		String thirdS = "";
-
-		youso = record.length;
-		if(youso == 3){
+		if(record.length == 3){
 		}else{
 			throw new IllegalArgumentException("引数の要素数が不正です");
 		}
-		thirdS = record[2];
 
-		if(thirdS == null){
+		if(record[2] == null){
 		}else{
 
 		try{
-			thirdS = record[2];
-			Integer.parseInt(thirdS);
+			Integer.parseInt(record[2]);
 		}catch(NumberFormatException e){
 			throw new IllegalArgumentException("引数の第3要素が数値に変換できません");
 		}
@@ -38,11 +32,11 @@ public class Work210{
 			dto.setName(record[1]);
 			dto.setPrice(null);
 		}else{
-		BigDecimal bigPrice = new BigDecimal(record[2]);//ここでnullが入ってる場合nullpointereceptionがでるのでifを使って分ける
+			BigDecimal bigPrice = new BigDecimal(record[2]);
 
-		dto.setCode(record[0]);
-		dto.setName(record[1]);
-		dto.setPrice(bigPrice);
+			dto.setCode(record[0]);
+			dto.setName(record[1]);
+			dto.setPrice(bigPrice);
 		}
 
 
