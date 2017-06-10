@@ -2,6 +2,7 @@ package com.ams.work310;
 
 import static org.junit.Assert.*;
 
+import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.List;
 
@@ -46,7 +47,7 @@ public class Work310Test {
 	}
 
 	@Test
-	public void createRecordList2() throws Exception {
+	public void createRecordList2のケース() throws Exception {
 		Work310 work = new Work310();
 		String[][] hairetu ={
 		                     {"A001",  "ロールケーキ",    "130"},
@@ -54,42 +55,85 @@ public class Work310Test {
 		                     {"A003",  "手包みクレープ",  "210"}
 		                     };
 		List<ProductDto>  resultList = work.createRecordList(hairetu);
-//		List<ProductDto> resultList = work.createRecordList(hairetu);
-//		List<String[]> exceptList = Arrays.asList(hairetu);
-//		for(int i = 0;i < resultList.size();i++){
-//			final String except = exceptList.get(i);
-//			final String result = resultList.get(i);
-//			assertEquals(except,result);
-//		}
-		for(int i = 0;i < hairetu.length;i++){
-			for(int j = 0; j < hairetu[i].length;j++){
-				final String except = hairetu[i][j];
-				final ProductDto result = resultList.get(i);
-				assertEquals(except,result.getCode());
-				assertEquals(except,result.getName());
-				assertEquals(except,result.getPrice());
+
+		ProductDto item1 = new ProductDto("A001", "ロールケーキ", new BigDecimal("130"));
+		ProductDto item2 = new ProductDto("A002", "生どら焼", new BigDecimal("150"));
+		ProductDto item3 = new ProductDto("A003", "手包みクレープ", new BigDecimal("210"));
+
+		int count = 0;
+		for(ProductDto dto : resultList) {
+			final String code = dto.getCode();
+			final String name = dto.getName();
+			final BigDecimal price = dto.getPrice();
+
+			switch(count) {
+
+			case 0:
+				assertEquals(item1.getCode(), code);
+				assertEquals(item1.getName(), name);
+				assertEquals(item1.getPrice(), price);
+				break;
+
+			case 1:
+				assertEquals(item2.getCode(), code);
+				assertEquals(item2.getName(), name);
+				assertEquals(item2.getPrice(), price);
+				break;
+
+			case 2:
+				assertEquals(item3.getCode(), code);
+				assertEquals(item3.getName(), name);
+				assertEquals(item3.getPrice(), price);
+				break;
+
+			default:
+				break;
+
 			}
+			count++;
 		}
 
+//		拡張for文で描かない場合↓
+//		for(int i = 0; i < resultList.size(); i++) {
+//			final ProductDto dto = resultList.get(i);
+//			final String code = dto.getCode();
+//			final String name = dto.getName();
+//			final BigDecimal price = dto.getPrice();
+//
+//		switch(i){
+//		case 0:
+//			assertEquals(item1.getCode(), code);
+//			assertEquals(item1.getName(), name);
+//			assertEquals(item1.getPrice(), price);
+//			break;
+//
+//		case 1:
+//			assertEquals(item2.getCode(), code);
+//			assertEquals(item2.getName(), name);
+//			assertEquals(item2.getPrice(), price);
+//			break;
+//
+//		case 2:
+//			assertEquals(item3.getCode(), code);
+//			assertEquals(item3.getName(), name);
+//			assertEquals(item3.getPrice(), price);
+//			break;
+//
+//		default:
+//			break;
+//		}
 
-//		assertEquals("A001",dto.getCode());
-//		assertEquals("ロールケーキ",list.get(1));
-//		assertEquals("130",			list.get(2));
-//		assertEquals("A002",		list.get(0));
-//		assertEquals("生どら焼き",	list.get(1));
-//		assertEquals("150",			list.get(2));
-//		assertEquals("A003",		list.get(0));
-//		assertEquals("手包みクレープ",list.get(1));
-//		assertEquals("210",			list.get(2));
+//		}
+
 	}
 
-	@Test(expected = IllegalArgumentException.class)
-	public void createRecordList3() throws Exception {
+	@Test
+	public void createRecordList3のケース() throws Exception {
 		Work310 work = new Work310();
-		String[][] hairetu ={{}};
-		work.createList(null);
-		List<ProductDto>  list = work.createRecordList(hairetu);
-		assertEquals("",list.get(0));
+		String[][] hairetu ={};
+		List<ProductDto>  resultList = work.createRecordList(hairetu);
+		assertEquals(0,resultList.size());
+
 	}
 
 }

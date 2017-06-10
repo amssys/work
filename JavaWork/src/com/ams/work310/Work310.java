@@ -28,22 +28,18 @@ public class Work310 {
 			throw new IllegalArgumentException("引数がNULLです");
 		}
 
+
 		List<ProductDto> list = new ArrayList<ProductDto>();
-		ProductDto dto = new ProductDto();
-
-
 
 		int elementL1 = elements.length;
 
 		for(int i = 0; i < elementL1 ;i++){
-			dto.setCode(elements[i][0]);
-			dto.setName(elements[i][1]);
-			BigDecimal bigPrice = new BigDecimal(elements[i][2]);
-			dto.setPrice(bigPrice);
-			list.add(dto);
-//			System.out.println(dto.getCode());
-//			System.out.println(dto.getName());
-//			System.out.println(dto.getPrice());
+				ProductDto dto = new ProductDto();
+				dto.setCode(elements[i][0]);
+				dto.setName(elements[i][1]);
+				BigDecimal bigPrice = new BigDecimal(elements[i][2]);
+				dto.setPrice(bigPrice);
+				list.add(dto);
 		}
 
 
