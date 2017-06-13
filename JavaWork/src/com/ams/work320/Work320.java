@@ -29,8 +29,8 @@ public class Work320 {
 			ProductDto dto = new ProductDto();
 			String key = keyValues[i][0][0];
 //			dto.setCode(keyValues[i][1][0]);
-			dto.setName(keyValues[i][1][1]);
-			BigDecimal bigPrice = new BigDecimal(keyValues[i][1][2]);
+			dto.setName(keyValues[i][1][0]);
+			BigDecimal bigPrice = new BigDecimal(keyValues[i][1][1]);
 			dto.setPrice(bigPrice);
 			map.put(key,dto);
 	}

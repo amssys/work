@@ -67,26 +67,28 @@ public class Work320Test {
 			Map<String,ProductDto> result = work.createRecordMap(hairetu);
 			int count = 0;
 			for(int i = 0; i < hairetu.length;i++){
-					String key = "";
-					final String name = hairetu[i][1][0];
-
+					final String key = hairetu[i][0][0];
+					final ProductDto dto = result.get(key);
+					final String name = dto.getName();
+					final BigDecimal price = dto.getPrice();
 
 					switch(count) {
 
 					case 0:
-						key = item1.getCode();
+//						key = item1.getCode();
+						assertEquals(item1.getCode(), key);
 						assertEquals(item1.getName(), name);
 						assertEquals(item1.getPrice(), price);
 						break;
 
 					case 1:
-						assertEquals(item2.getCode(), code);
+//						key = item2.getCode();
 						assertEquals(item2.getName(), name);
 						assertEquals(item2.getPrice(), price);
 						break;
 
 					case 2:
-						assertEquals(item3.getCode(), code);
+//						key = item3.getCode();
 						assertEquals(item3.getName(), name);
 						assertEquals(item3.getPrice(), price);
 						break;
@@ -100,7 +102,7 @@ public class Work320Test {
 		}
 
 		@Test
-		public void  createRecordMapのケース()  throws Exception {
+		public void  createRecordMap3のケース()  throws Exception {
 			Work320 work = new Work320();
 			String[][][] hairetu ={};
 			Map<String,ProductDto> result = work.createRecordMap(hairetu);
