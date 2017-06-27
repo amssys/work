@@ -15,10 +15,7 @@ public class Work410 {
 	 * @param detailNo
 	 * @return
 	 */
-	public List<SalesDto> selectByKey(int tranNo, int detailNo) {
-		for(String s : readCsv("item_code.csv")) {
-			System.out.println(s);
-		}
+	public SalesDto selectByKey(List<SalesDto>	data, int tranNo, int detailNo) {
 		return null;
 	}
 
@@ -27,7 +24,7 @@ public class Work410 {
 	 * @param csvFileName
 	 * @return
 	 */
-	private static List<String> readCsv(String csvFileName) {
+	public static List<String> readCsv(String csvFileName) {
 		List<String> csvElements = new ArrayList<String>();
 		FileReader fr = null;
 		BufferedReader br = null;
