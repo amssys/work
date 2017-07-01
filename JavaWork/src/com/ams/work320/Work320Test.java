@@ -83,12 +83,14 @@ public class Work320Test {
 
 					case 1:
 //						key = item2.getCode();
+						assertEquals(item2.getCode(), key);
 						assertEquals(item2.getName(), name);
 						assertEquals(item2.getPrice(), price);
 						break;
 
 					case 2:
 //						key = item3.getCode();
+						assertEquals(item3.getCode(), key);
 						assertEquals(item3.getName(), name);
 						assertEquals(item3.getPrice(), price);
 						break;
