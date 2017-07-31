@@ -1,13 +1,10 @@
 package com.ams.work410;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.math.BigDecimal;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 public class Work410 {
 
@@ -18,69 +15,67 @@ public class Work410 {
 	 * @param detailNo
 	 * @return
 	 */
-	public List<SalesDto> selectByKey(List<SalesDto> data ,int tranNo, int detailNo) {
-		if(data == null){
-			throw new IllegalArgumentException("引数がNULLです");
+	public List<SalesDto> selectByKey(List<SalesDto> data, int tranNo,
+			int detailNo) {
+		if (data == null) {
+			throw new IllegalArgumentException("IllegalArgumentException");
 		}
-		List<String> strs = new ArrayList<String>();
 		List<SalesDto> list = new ArrayList<SalesDto>();
-		//for(String s : readCsv("item_list.csv")) {
-		for(String s :strs){
-			if(s.indexOf(String.valueOf(tranNo)) != -1 && s.indexOf(String.valueOf(detailNo))  != -1){
-				SimpleDateFormat sdf = new SimpleDateFormat();
-				SalesDto dto = new SalesDto();
-				String[] str = s.split(",",0);
-				dto.setTranNo(Integer.parseInt(str[0]));
-				try{
-					dto.setTranDate(sdf.parse(str[1]));
-				}catch(ParseException e){
-					System.out.println(e);
-				}
-				dto.setDetailNo(Integer.parseInt(str[2]));
-				dto.setItemCd(str[3]);
-				dto.setItemName(str[4]);
-				BigDecimal bQty = new BigDecimal(str[5]);
-				dto.setQty(bQty);
-				BigDecimal bPrice = new BigDecimal(str[6]);
-				dto.setPrice(bPrice);
-				BigDecimal bAmount = new BigDecimal(str[7]);
-				dto.setAmount(bAmount);
+		for (SalesDto dto : data) {
+			if (dto.getTranNo() == tranNo && dto.getDetailNo() == detailNo) {
 				list.add(dto);
 			}
-			System.out.println(s);
+		}
+		if (list.size() == 0) {
+			return null;
 		}
 		return list;
 	}
 
-
-
-	/**
-	 * 指定したCSVファイルを1行ずつ読み込みます<BR>
-	 * @param csvFileName
-	 * @return
-	 */
-	public static List<String> readCsv(String csvFileName) {
-		List<String> csvElements = new ArrayList<String>();
-		FileReader fr = null;
-		BufferedReader br = null;
-		try {
-			// ファイルを読み込む
-			fr = new FileReader(".\\FILE\\work400\\" + csvFileName);
-			br = new BufferedReader(fr);
-			// 読み込んだファイルを１行ずつ処理する
-			String line;
-			while ((line = br.readLine()) != null) {
-				csvElements.add(line);
-			}
-			// 終了処理
-			br.close();
-		} catch (IOException ex) {
-			try { br.close();} catch (IOException e) {
-				e.printStackTrace();
-			}
-			// 例外発生時処理
-			ex.printStackTrace();
+	public List<SalesDto> selectByTranDate(List<SalesDto> data,
+											Date tranDateFrom,
+											Date tranDateTo) throws AssertionError{
+		if (data == null||tranDateFrom == null||tranDateTo == null) {
+			throw new IllegalArgumentException("IllegalArgumentException");
 		}
-		return csvElements;
+		if (tranDateFrom.compareTo(tranDateTo) > 0) {
+			throw new IllegalArgumentException("IllegalArgumentException");
+		}
+		long dateTimeFrom = tranDateFrom.getTime();
+		long dateTimeTo = tranDateTo.getTime();
+		int days = (int) ((dateTimeTo - dateTimeFrom) / (1000 * 60 * 60 * 24)) + 1;
+		Date[] date = new Date[days];
+		Calendar calendar = Calendar.getInstance();
+		calendar.setTime(tranDateFrom);
+		for (int i = 0; i < date.length; i++) {
+			date[i] = calendar.getTime();
+			calendar.add(Calendar.DATE, 1);
+		}
+
+		List<SalesDto> list = new ArrayList<SalesDto>();
+		for (SalesDto dto : data) {
+			for (Date day : date) {
+				if (day.compareTo(dto.getTranDate()) == 0) {
+					list.add(dto);
+				}
+			}
+		}
+
+		return list;
 	}
+	public  List<SalesDto> addItemName(List<SalesDto> data, Map<String,String> itemCdNameMap){
+		if (data == null||itemCdNameMap == null) {
+			throw new IllegalArgumentException("IllegalArgumentException");
+		}
+		List<SalesDto> list = new ArrayList<SalesDto>();
+
+		for (SalesDto dto : data) {
+			String itemName = itemCdNameMap.get(dto.getItemCd());
+			dto.setItemName(itemName);
+			list.add(dto);
+		}
+
+		return list;
+	}
+
 }

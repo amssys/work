@@ -80,6 +80,29 @@ public class SalesDto {
 		this.price = price;
 		this.amount = amount;
 	}
+	public SalesDto(int tranNo,Date tranDate,int detailNo,String itemCd, String itemName,BigDecimal qty, BigDecimal price) {
+		this.tranNo = tranNo;
+		this.tranDate = tranDate;
+		this.detailNo = detailNo;
+		this.itemCd = itemCd;
+		this.itemName = itemName;
+		this.qty = qty;
+		this.price = price;
+	}
+
+
+	public SalesDto(int tranNo,Date tranDate,int detailNo,String itemCd,BigDecimal qty, BigDecimal price){
+		set6(tranNo,tranDate,detailNo,itemCd,qty,price);
+	}
+
+	public void set6(int tranNo,Date tranDate,int detailNo,String itemCd,BigDecimal qty, BigDecimal price){
+		this.tranNo = tranNo;
+		this.tranDate = tranDate;
+		this.detailNo = detailNo;
+		this.itemCd = itemCd;
+		this.qty = qty;
+		this.price = price;
+	}
 
 	/**
 	 * 取引番号を取得
