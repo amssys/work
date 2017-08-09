@@ -90,7 +90,7 @@ public class Utility {
 	/**
 	 * 指定したCSVファイルを分解してMapに入れます
 	 *
-	 * @param scvFileName
+	 * @param createMap
 	 * @return Map<String,String>
 	 */
 	public Map<String,String> createMap(String csv) {
