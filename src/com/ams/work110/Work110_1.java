@@ -4,7 +4,7 @@ package com.ams.work110;
 
 public class Work110_1 {
 	private char[] dstr;
-	//
+
 	/**	@param str 分解される文字列
 	 * @return 分解された文字列
 	 * @throws IllegalArgumentException
