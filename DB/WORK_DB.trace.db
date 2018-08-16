@@ -1,0 +1,1071 @@
+04-18 11:26:53 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: SQLステートメントに文法エラーがあります "INSERT INTO M_TYPE VALUES('DK '飲料[*]')"
+Syntax error in SQL statement "INSERT INTO M_TYPE VALUES('DK '飲料[*]')"; SQL statement:
+INSERT INTO M_TYPE VALUES('DK '飲料') [42000-166]
+04-18 11:50:55 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: SQLステートメントに文法エラーがあります "INSERT INTO M_ITEM VALUES('P001', あんパン', 'DK', '1050[*]', 120)"
+Syntax error in SQL statement "INSERT INTO M_ITEM VALUES('P001', あんパン', 'DK', '1050[*]', 120)"; SQL statement:
+INSERT INTO M_ITEM VALUES('P001', あんパン', 'DK', '1050', 120) [42000-166]
+04-18 12:43:55 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: "DATE" 定数 "2012-04-01 09:00:00" を解析できません
+Cannot parse "DATE" constant "2012-04-01 09:00:00"; SQL statement:
+INSERT INTO SALES_HEAD VALUES(10000002, DATE'2012-04-01 09:00:00', 1, '1001', 1000, 3) [22007-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:158)
+	at org.h2.value.ValueDate.parse(ValueDate.java:70)
+	at org.h2.command.Parser.readTerm(Parser.java:2497)
+	at org.h2.command.Parser.readFactor(Parser.java:2046)
+	at org.h2.command.Parser.readSum(Parser.java:2033)
+	at org.h2.command.Parser.readConcat(Parser.java:2006)
+	at org.h2.command.Parser.readCondition(Parser.java:1871)
+	at org.h2.command.Parser.readAnd(Parser.java:1852)
+	at org.h2.command.Parser.readExpression(Parser.java:1844)
+	at org.h2.command.Parser.parseInsert(Parser.java:989)
+	at org.h2.command.Parser.parsePrepared(Parser.java:375)
+	at org.h2.command.Parser.parse(Parser.java:279)
+	at org.h2.command.Parser.parse(Parser.java:251)
+	at org.h2.command.Parser.prepareCommand(Parser.java:217)
+	at org.h2.engine.Session.prepareLocal(Session.java:415)
+	at org.h2.engine.Session.prepareCommand(Session.java:364)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:164)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1311)
+	at org.h2.server.web.WebApp.query(WebApp.java:1001)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:964)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.NumberFormatException: For input string: "01 09:00:00"
+	at java.lang.NumberFormatException.forInputString(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:274)
+	at org.h2.value.ValueDate.parse(ValueDate.java:68)
+	... 24 more
+04-18 12:44:04 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: "DATE" 定数 "2012-04-01 09:00" を解析できません
+Cannot parse "DATE" constant "2012-04-01 09:00"; SQL statement:
+INSERT INTO SALES_HEAD VALUES(10000002, DATE'2012-04-01 09:00', 1, '1001', 1000, 3) [22007-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:158)
+	at org.h2.value.ValueDate.parse(ValueDate.java:70)
+	at org.h2.command.Parser.readTerm(Parser.java:2497)
+	at org.h2.command.Parser.readFactor(Parser.java:2046)
+	at org.h2.command.Parser.readSum(Parser.java:2033)
+	at org.h2.command.Parser.readConcat(Parser.java:2006)
+	at org.h2.command.Parser.readCondition(Parser.java:1871)
+	at org.h2.command.Parser.readAnd(Parser.java:1852)
+	at org.h2.command.Parser.readExpression(Parser.java:1844)
+	at org.h2.command.Parser.parseInsert(Parser.java:989)
+	at org.h2.command.Parser.parsePrepared(Parser.java:375)
+	at org.h2.command.Parser.parse(Parser.java:279)
+	at org.h2.command.Parser.parse(Parser.java:251)
+	at org.h2.command.Parser.prepareCommand(Parser.java:217)
+	at org.h2.engine.Session.prepareLocal(Session.java:415)
+	at org.h2.engine.Session.prepareCommand(Session.java:364)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:164)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1311)
+	at org.h2.server.web.WebApp.query(WebApp.java:1001)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:964)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.NumberFormatException: For input string: "01 09:00"
+	at java.lang.NumberFormatException.forInputString(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:274)
+	at org.h2.value.ValueDate.parse(ValueDate.java:68)
+	... 24 more
+04-18 12:48:38 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: SQLステートメントに文法エラーがあります "INSERT INTO TEST_TABLE VALUES(DATETIME'2010-04-12 09:00:12'[*])"; 期待されるステートメント "., (, [, ::, *, /, %, +, -, ||, ~, !~, NOT, LIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO TEST_TABLE VALUES(DATETIME'2010-04-12 09:00:12'[*])"; expected "., (, [, ::, *, /, %, +, -, ||, ~, !~, NOT, LIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+INSERT INTO TEST_TABLE VALUES(DATETIME'2010-04-12 09:00:12') [42001-166]
+04-18 12:56:44 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: "CSVWRITE" は無効なパラメータ番号です, 期待される番号: "2..2147483647"
+Invalid parameter count for "CSVWRITE", expected count: "2..2147483647"; SQL statement:
+CALL CSVWRITE('C:\NJ\testdata.csv'), 'SELECT * FROM M_ITEM') [7001-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.expression.Function.checkParameterCount(Function.java:1701)
+	at org.h2.expression.Function.doneWithParameters(Function.java:1714)
+	at org.h2.command.Parser.readFunction(Parser.java:2304)
+	at org.h2.command.Parser.readTerm(Parser.java:2476)
+	at org.h2.command.Parser.readFactor(Parser.java:2046)
+	at org.h2.command.Parser.readSum(Parser.java:2033)
+	at org.h2.command.Parser.readConcat(Parser.java:2006)
+	at org.h2.command.Parser.readCondition(Parser.java:1871)
+	at org.h2.command.Parser.readAnd(Parser.java:1852)
+	at org.h2.command.Parser.readExpression(Parser.java:1844)
+	at org.h2.command.Parser.parseCall(Parser.java:4003)
+	at org.h2.command.Parser.parsePrepared(Parser.java:326)
+	at org.h2.command.Parser.parse(Parser.java:279)
+	at org.h2.command.Parser.parse(Parser.java:251)
+	at org.h2.command.Parser.prepareCommand(Parser.java:217)
+	at org.h2.engine.Session.prepareLocal(Session.java:415)
+	at org.h2.engine.Session.prepareCommand(Session.java:364)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:164)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1311)
+	at org.h2.server.web.WebApp.query(WebApp.java:1001)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:964)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+04-18 12:57:22 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: "CSVWRITE" は無効なパラメータ番号です, 期待される番号: "2..2147483647"
+Invalid parameter count for "CSVWRITE", expected count: "2..2147483647"; SQL statement:
+CALL CSVWRITE('C:\NJ\testdata.csv'), 'SELECT * FROM M_ITEM' [7001-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.expression.Function.checkParameterCount(Function.java:1701)
+	at org.h2.expression.Function.doneWithParameters(Function.java:1714)
+	at org.h2.command.Parser.readFunction(Parser.java:2304)
+	at org.h2.command.Parser.readTerm(Parser.java:2476)
+	at org.h2.command.Parser.readFactor(Parser.java:2046)
+	at org.h2.command.Parser.readSum(Parser.java:2033)
+	at org.h2.command.Parser.readConcat(Parser.java:2006)
+	at org.h2.command.Parser.readCondition(Parser.java:1871)
+	at org.h2.command.Parser.readAnd(Parser.java:1852)
+	at org.h2.command.Parser.readExpression(Parser.java:1844)
+	at org.h2.command.Parser.parseCall(Parser.java:4003)
+	at org.h2.command.Parser.parsePrepared(Parser.java:326)
+	at org.h2.command.Parser.parse(Parser.java:279)
+	at org.h2.command.Parser.parse(Parser.java:251)
+	at org.h2.command.Parser.prepareCommand(Parser.java:217)
+	at org.h2.engine.Session.prepareLocal(Session.java:415)
+	at org.h2.engine.Session.prepareCommand(Session.java:364)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:164)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1311)
+	at org.h2.server.web.WebApp.query(WebApp.java:1001)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:964)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+04-18 13:16:34 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: "DATE" 定数 "2012-04-01 10:00:00" を解析できません
+Cannot parse "DATE" constant "2012-04-01 10:00:00"; SQL statement:
+INSERT INTO SALES_HEAD VALUES(10000003, '2012-04-01 10:00:00', 1, '1001', 1000, 3) -- (10000003, '2012-04-01 10:00:00', 1, '1001', 1000, 3) [22007-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:158)
+	at org.h2.value.ValueDate.parse(ValueDate.java:70)
+	at org.h2.value.Value.convertTo(Value.java:817)
+	at org.h2.table.Column.convert(Column.java:143)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:112)
+	at org.h2.command.dml.Insert.update(Insert.java:84)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:73)
+	at org.h2.command.Command.executeUpdate(Command.java:226)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:177)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1311)
+	at org.h2.server.web.WebApp.query(WebApp.java:1001)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:964)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.NumberFormatException: For input string: "01 10:00:00"
+	at java.lang.NumberFormatException.forInputString(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:274)
+	at org.h2.value.ValueDate.parse(ValueDate.java:68)
+	... 15 more
+04-18 13:24:46 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: 列 "2010-01-01 12:12:32" が見つかりません
+Column "2010-01-01 12:12:32" not found; SQL statement:
+INSERT INTO TS_TABLE VALUES("2010-01-01 12:12:32") [42122-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:138)
+	at org.h2.command.dml.Insert.prepare(Insert.java:231)
+	at org.h2.command.Parser.prepareCommand(Parser.java:218)
+	at org.h2.engine.Session.prepareLocal(Session.java:415)
+	at org.h2.engine.Session.prepareCommand(Session.java:364)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:164)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1311)
+	at org.h2.server.web.WebApp.query(WebApp.java:1001)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:964)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+04-19 09:10:37 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: 複数のプライマリキーを定義しようとしました
+Attempt to define a second primary key; SQL statement:
+create table ttt (aa int PRIMARY KEY, bb int primary key) [90017-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.message.DbException.get(DbException.java:135)
+	at org.h2.command.ddl.CreateTable.setPrimaryKeyColumns(CreateTable.java:240)
+	at org.h2.command.ddl.CreateTable.addConstraintCommand(CreateTable.java:82)
+	at org.h2.command.Parser.parseCreateTable(Parser.java:5221)
+	at org.h2.command.Parser.parseCreate(Parser.java:3806)
+	at org.h2.command.Parser.parsePrepared(Parser.java:324)
+	at org.h2.command.Parser.parse(Parser.java:279)
+	at org.h2.command.Parser.parse(Parser.java:251)
+	at org.h2.command.Parser.prepareCommand(Parser.java:217)
+	at org.h2.engine.Session.prepareLocal(Session.java:415)
+	at org.h2.engine.Session.prepareCommand(Session.java:364)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:164)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1311)
+	at org.h2.server.web.WebApp.query(WebApp.java:1001)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:964)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+04-19 10:19:50 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: SQLステートメントに文法エラーがあります "CREATE TABLE SALES_HEAD(TRAN_NO INT PRIMARY KEY, TRAN_DATE TIMESTAMP, REG_NO INT SALES_STAFF_CD[*] CHAR(4),TOTAL_AMOUNT DECIMAL(9), TOTAL_QTY DECIMAL(6))"; 期待されるステートメント "(, FOR, UNSIGNED, NOT, NULL, AS, DEFAULT, GENERATED, NOT, NULL, AUTO_INCREMENT, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE SALES_HEAD(TRAN_NO INT PRIMARY KEY, TRAN_DATE TIMESTAMP, REG_NO INT SALES_STAFF_CD[*] CHAR(4),TOTAL_AMOUNT DECIMAL(9), TOTAL_QTY DECIMAL(6))"; expected "(, FOR, UNSIGNED, NOT, NULL, AS, DEFAULT, GENERATED, NOT, NULL, AUTO_INCREMENT, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE SALES_HEAD(TRAN_NO INT PRIMARY KEY, TRAN_DATE TIMESTAMP, REG_NO INT SALES_STAFF_CD CHAR(4),TOTAL_AMOUNT DECIMAL(9), TOTAL_QTY DECIMAL(6)) [42001-166]
+04-19 11:07:02 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: SQLステートメントに文法エラーがあります "CREATE TABLE WK_M_ITEM(ITEM_CD CHAR(4), ITEM_NAME VARCHAR(100), PRICE DECIMAL(6), START_DAY DATE, END_DAY DATE, DEL_FLG CHAR(1) PRIMARY KEY([*]ITEM_CD, START_DAY))"; 期待されるステートメント "HASH, AUTO_INCREMENT, NOT, NULL, CHECK, REFERENCES, ,, )"
+Syntax error in SQL statement "CREATE TABLE WK_M_ITEM(ITEM_CD CHAR(4), ITEM_NAME VARCHAR(100), PRICE DECIMAL(6), START_DAY DATE, END_DAY DATE, DEL_FLG CHAR(1) PRIMARY KEY([*]ITEM_CD, START_DAY))"; expected "HASH, AUTO_INCREMENT, NOT, NULL, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE WK_M_ITEM(ITEM_CD CHAR(4), ITEM_NAME VARCHAR(100), PRICE DECIMAL(6), START_DAY DATE, END_DAY DATE, DEL_FLG CHAR(1) PRIMARY KEY(ITEM_CD, START_DAY)) [42001-166]
+04-19 11:13:56 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: 列番号が一致しません
+Column count does not match; SQL statement:
+INSERT INTO WK_M_ITEM  VALUES('F001', 'アボカド') [21002-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.message.DbException.get(DbException.java:135)
+	at org.h2.command.dml.Insert.prepare(Insert.java:226)
+	at org.h2.command.Parser.prepareCommand(Parser.java:218)
+	at org.h2.engine.Session.prepareLocal(Session.java:415)
+	at org.h2.engine.Session.prepareCommand(Session.java:364)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:164)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1311)
+	at org.h2.server.web.WebApp.query(WebApp.java:1001)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:964)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+04-19 11:18:33 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: 列 "いちご" が見つかりません
+Column "いちご" not found; SQL statement:
+INSERT INTO WK_M_ITEM (ITEM_CD, ITEM_NAME) VALUES('F002', いちご) [42122-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:138)
+	at org.h2.command.dml.Insert.prepare(Insert.java:231)
+	at org.h2.command.Parser.prepareCommand(Parser.java:218)
+	at org.h2.engine.Session.prepareLocal(Session.java:415)
+	at org.h2.engine.Session.prepareCommand(Session.java:364)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:164)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1311)
+	at org.h2.server.web.WebApp.query(WebApp.java:1001)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:964)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+04-19 11:50:40 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: 列番号が一致しません
+Column count does not match; SQL statement:
+INSERT INTO WK_SALES_LIST VALUES(10000001, '2012-04-01',1, 'F001', 1, 150) [21002-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.message.DbException.get(DbException.java:135)
+	at org.h2.command.dml.Insert.prepare(Insert.java:226)
+	at org.h2.command.Parser.prepareCommand(Parser.java:218)
+	at org.h2.engine.Session.prepareLocal(Session.java:415)
+	at org.h2.engine.Session.prepareCommand(Session.java:364)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:164)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1311)
+	at org.h2.server.web.WebApp.query(WebApp.java:1001)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:964)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+04-19 11:52:01 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: 列番号が一致しません
+Column count does not match; SQL statement:
+INSERT INTO WK_SALES_LIST VALUES(10000001, '2012-04-01', 3, 'F001', 1,150) [21002-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.message.DbException.get(DbException.java:135)
+	at org.h2.command.dml.Insert.prepare(Insert.java:226)
+	at org.h2.command.Parser.prepareCommand(Parser.java:218)
+	at org.h2.engine.Session.prepareLocal(Session.java:415)
+	at org.h2.engine.Session.prepareCommand(Session.java:364)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:164)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1311)
+	at org.h2.server.web.WebApp.query(WebApp.java:1001)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:964)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+04-19 12:41:58 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: SQLステートメントに文法エラーがあります "SELECT * 
+FROM SALES_HEAD
+WHILE TOTAL_AMOUNT[*] = 1000"
+Syntax error in SQL statement "SELECT * 
+FROM SALES_HEAD
+WHILE TOTAL_AMOUNT[*] = 1000"; SQL statement:
+SELECT * 
+FROM SALES_HEAD
+WHILE TOTAL_AMOUNT = 1000 [42000-166]
+04-19 12:46:42 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: 列 "SALES_HEAD.TRAN_NO" が見つかりません
+Column "SALES_HEAD.TRAN_NO" not found; SQL statement:
+SELECT SALES_HEAD.TRAN_NO, SALES_HEAD.TRAN_DATE SALES_DETAIL.DETAIL_NO
+FROM SALES_HEAD, SALES_DETAIL [42122-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:138)
+	at org.h2.command.dml.Select.prepare(Select.java:799)
+	at org.h2.command.Parser.prepareCommand(Parser.java:218)
+	at org.h2.engine.Session.prepareLocal(Session.java:415)
+	at org.h2.engine.Session.prepareCommand(Session.java:364)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:164)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1311)
+	at org.h2.server.web.WebApp.query(WebApp.java:1001)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:964)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+04-19 12:48:13 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: 列 "SALES_DETAIL.ITEMEM_CD" が見つかりません
+Column "SALES_DETAIL.ITEMEM_CD" not found; SQL statement:
+SELECT SALES_HEAD.TRAN_NO, SALES_HEAD.TRAN_DATE, SALES_DETAIL.DETAIL_NO, SALES_DETAIL.ITEMEM_CD 
+FROM SALES_HEAD, SALES_DETAIL
+WHERE SALES_HEAD.TRAN_NO = SALES_DETAIL.TRAN_NO [42122-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:138)
+	at org.h2.command.dml.Select.prepare(Select.java:799)
+	at org.h2.command.Parser.prepareCommand(Parser.java:218)
+	at org.h2.engine.Session.prepareLocal(Session.java:415)
+	at org.h2.engine.Session.prepareCommand(Session.java:364)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:164)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1311)
+	at org.h2.server.web.WebApp.query(WebApp.java:1001)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:964)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+04-19 12:49:21 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: 列 "SALES_HEAD.TRAN_NO" が見つかりません
+Column "SALES_HEAD.TRAN_NO" not found; SQL statement:
+SELECT SALES_HEAD.TRAN_NO, SALES_HEAD.TRAN_DATE, SALES_DETAIL.DETAIL_NO, SALES_DETAIL.ITEM_CD SALES_DETAIL.QTY, SALES_DETAIL.PRICE 金額
+FROM SALES_HEAD, SALES_DETAIL
+WHERE SALES_HEAD.TRAN_NO = SALES_DETAIL.TRAN_NO [42122-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:138)
+	at org.h2.command.dml.Select.prepare(Select.java:799)
+	at org.h2.command.Parser.prepareCommand(Parser.java:218)
+	at org.h2.engine.Session.prepareLocal(Session.java:415)
+	at org.h2.engine.Session.prepareCommand(Session.java:364)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:164)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1311)
+	at org.h2.server.web.WebApp.query(WebApp.java:1001)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:964)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+04-19 12:49:27 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: 列 "SALES_HEAD.TRAN_NO" が見つかりません
+Column "SALES_HEAD.TRAN_NO" not found; SQL statement:
+SELECT SALES_HEAD.TRAN_NO, SALES_HEAD.TRAN_DATE, SALES_DETAIL.DETAIL_NO, SALES_DETAIL.ITEM_CD SALES_DETAIL.QTY, SALES_DETAIL.PRICE
+FROM SALES_HEAD, SALES_DETAIL
+WHERE SALES_HEAD.TRAN_NO = SALES_DETAIL.TRAN_NO [42122-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:138)
+	at org.h2.command.dml.Select.prepare(Select.java:799)
+	at org.h2.command.Parser.prepareCommand(Parser.java:218)
+	at org.h2.engine.Session.prepareLocal(Session.java:415)
+	at org.h2.engine.Session.prepareCommand(Session.java:364)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:164)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1311)
+	at org.h2.server.web.WebApp.query(WebApp.java:1001)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:964)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+04-19 12:50:05 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: 列 "SALES_HEAD.TRAN_NO" が見つかりません
+Column "SALES_HEAD.TRAN_NO" not found; SQL statement:
+SELECT SALES_HEAD.TRAN_NO, SALES_HEAD.TRAN_DATE, SALES_DETAIL.DETAIL_NO, SALES_DETAIL.ITEM_CD SALES_DETAIL.QTY, SALES_DETAIL.PRICE
+FROM SALES_HEAD, SALES_DETAIL
+WHERE SALES_HEAD.TRAN_NO = SALES_DETAIL.TRAN_NO [42122-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:138)
+	at org.h2.command.dml.Select.prepare(Select.java:799)
+	at org.h2.command.Parser.prepareCommand(Parser.java:218)
+	at org.h2.engine.Session.prepareLocal(Session.java:415)
+	at org.h2.engine.Session.prepareCommand(Session.java:364)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:164)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1311)
+	at org.h2.server.web.WebApp.query(WebApp.java:1001)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:964)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+04-19 12:59:00 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: SQLステートメントに文法エラーがあります "SELECT SALES_HEAD.TRAN_NO 取引番号, SALES_HEAD.TRAN_DATE 取引日時, SALES_DETAIL.DETAIL_NO 明細番号, SALES_DETAIL.ITEM_CD 商品コード,SALES_DETAIL.QTY 数量, SALES_DETAIL.PRICE 単価
+FROM SALES_HEAD, SALES_DETAIL
+WHERE SALES_HEAD.TRAN_NO = SALES_DETAIL.TRAN_NO
+AND SALES_HEAD.TRAN_DATE = ''2012[*]-04-12 08:00:00"
+Syntax error in SQL statement "SELECT SALES_HEAD.TRAN_NO 取引番号, SALES_HEAD.TRAN_DATE 取引日時, SALES_DETAIL.DETAIL_NO 明細番号, SALES_DETAIL.ITEM_CD 商品コード,SALES_DETAIL.QTY 数量, SALES_DETAIL.PRICE 単価
+FROM SALES_HEAD, SALES_DETAIL
+WHERE SALES_HEAD.TRAN_NO = SALES_DETAIL.TRAN_NO
+AND SALES_HEAD.TRAN_DATE = ''2012[*]-04-12 08:00:00"; SQL statement:
+SELECT SALES_HEAD.TRAN_NO 取引番号, SALES_HEAD.TRAN_DATE 取引日時, SALES_DETAIL.DETAIL_NO 明細番号, SALES_DETAIL.ITEM_CD 商品コード,SALES_DETAIL.QTY 数量, SALES_DETAIL.PRICE 単価
+FROM SALES_HEAD, SALES_DETAIL
+WHERE SALES_HEAD.TRAN_NO = SALES_DETAIL.TRAN_NO
+AND SALES_HEAD.TRAN_DATE = ''2012-04-12 08:00:00 [42000-166]
+04-19 13:01:26 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: 列 "M_ITEM.ITEM_NAME" が見つかりません
+Column "M_ITEM.ITEM_NAME" not found; SQL statement:
+SELECT SALES_HEAD.TRAN_NO 取引番号, SALES_HEAD.TRAN_DATE 取引日時, M_ITEM.ITEM_NAME 商品名,SALES_DETAIL.DETAIL_NO 明細番号, SALES_DETAIL.ITEM_CD 商品コード,SALES_DETAIL.QTY 数量, SALES_DETAIL.PRICE 単価
+FROM SALES_HEAD, SALES_DETAIL
+WHERE SALES_HEAD.TRAN_NO = SALES_DETAIL.TRAN_NO
+AND SALES_HEAD.TRAN_DATE = '2012-04-01 08:00:00' [42122-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:138)
+	at org.h2.expression.Alias.optimize(Alias.java:47)
+	at org.h2.command.dml.Select.prepare(Select.java:799)
+	at org.h2.command.Parser.prepareCommand(Parser.java:218)
+	at org.h2.engine.Session.prepareLocal(Session.java:415)
+	at org.h2.engine.Session.prepareCommand(Session.java:364)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:164)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1311)
+	at org.h2.server.web.WebApp.query(WebApp.java:1001)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:964)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+04-19 13:53:35 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: 列 "SALES_HEAD.TRAN_DATE" はリストによりグループ化されなければなりません
+Column "SALES_HEAD.TRAN_DATE" must be in the GROUP BY list; SQL statement:
+SELECT SALES_HEAD.TRAN_DATE 取引日時, SUM(SALES_DETAIL.PRICE * SALES_DETAIL.QTY) 単価
+FROM SALES_HEAD, SALES_DETAIL
+WHERE SALES_HEAD.TRAN_NO = SALES_DETAIL.TRAN_NO [90016-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.expression.ExpressionColumn.updateAggregate(ExpressionColumn.java:159)
+	at org.h2.expression.Alias.updateAggregate(Alias.java:76)
+	at org.h2.command.dml.Select.queryGroup(Select.java:339)
+	at org.h2.command.dml.Select.queryWithoutCache(Select.java:613)
+	at org.h2.command.dml.Query.query(Query.java:307)
+	at org.h2.command.dml.Query.query(Query.java:277)
+	at org.h2.command.dml.Query.query(Query.java:36)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:82)
+	at org.h2.command.Command.executeQuery(Command.java:187)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:173)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1311)
+	at org.h2.server.web.WebApp.query(WebApp.java:1001)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:964)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+04-19 14:06:32 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: 列 "SALES_DETAIL.ITEM_CD" はリストによりグループ化されなければなりません
+Column "SALES_DETAIL.ITEM_CD" must be in the GROUP BY list; SQL statement:
+SELECT SALES_HEAD.TRAN_DATE 取引日時, SALES_DETAIL.ITEM_CD 商品コード, SUM(SALES_DETAIL.PRICE * SALES_DETAIL.QTY) 売上金額
+FROM SALES_HEAD, SALES_DETAIL
+WHERE SALES_HEAD.TRAN_NO = SALES_DETAIL.TRAN_NO
+GROUP BY SALES_HEAD.TRAN_DATE [90016-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.expression.ExpressionColumn.updateAggregate(ExpressionColumn.java:159)
+	at org.h2.expression.Alias.updateAggregate(Alias.java:76)
+	at org.h2.command.dml.Select.queryGroup(Select.java:339)
+	at org.h2.command.dml.Select.queryWithoutCache(Select.java:613)
+	at org.h2.command.dml.Query.query(Query.java:307)
+	at org.h2.command.dml.Query.query(Query.java:277)
+	at org.h2.command.dml.Query.query(Query.java:36)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:82)
+	at org.h2.command.Command.executeQuery(Command.java:187)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:173)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1311)
+	at org.h2.server.web.WebApp.query(WebApp.java:1001)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:964)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+04-19 14:11:59 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: SQLステートメントに文法エラーがあります "INSERT INTO SALES_DETAIL  VALUES(10000001, 4, 'B001', 2, 100 200[*])"; 期待されるステートメント "[, ::, *, /, %, +, -, ||, ~, !~, NOT, LIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"
+Syntax error in SQL statement "INSERT INTO SALES_DETAIL  VALUES(10000001, 4, 'B001', 2, 100 200[*])"; expected "[, ::, *, /, %, +, -, ||, ~, !~, NOT, LIKE, REGEXP, IS, IN, BETWEEN, AND, OR, ,, )"; SQL statement:
+INSERT INTO SALES_DETAIL  VALUES(10000001, 4, 'B001', 2, 100 200) [42001-166]
+04-19 14:45:34 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: SQLステートメントに文法エラーがあります "INSERT INTO N_SALES_DETAIL VN_SALES_DETAIL[*] ALUES(10000001, 4, 'B001', 2,100, 200, 'N')"; 期待されるステートメント "., (, DIRECT, SORTED, DEFAULT, VALUES, SET, (, SELECT, FROM"
+Syntax error in SQL statement "INSERT INTO N_SALES_DETAIL VN_SALES_DETAIL[*] ALUES(10000001, 4, 'B001', 2,100, 200, 'N')"; expected "., (, DIRECT, SORTED, DEFAULT, VALUES, SET, (, SELECT, FROM"; SQL statement:
+INSERT INTO N_SALES_DETAIL VN_SALES_DETAIL ALUES(10000001, 4, 'B001', 2,100, 200, 'N') [42001-166]
+04-19 14:48:43 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: 列 "SALES_DETAIL.DEL_FLG" が見つかりません
+Column "SALES_DETAIL.DEL_FLG" not found; SQL statement:
+SELECT * FROM N_SALES_DETAIL 
+WHERE SALES_DETAIL.DEL_FLG != 'Y' [42122-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:138)
+	at org.h2.expression.Comparison.optimize(Comparison.java:159)
+	at org.h2.command.dml.Select.prepare(Select.java:802)
+	at org.h2.command.Parser.prepareCommand(Parser.java:218)
+	at org.h2.engine.Session.prepareLocal(Session.java:415)
+	at org.h2.engine.Session.prepareCommand(Session.java:364)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:164)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1311)
+	at org.h2.server.web.WebApp.query(WebApp.java:1001)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:964)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+04-19 14:54:18 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: SQLステートメントに文法エラーがあります "SALES_HEAD"; 期待されるステートメント "SELECT, SET, SAVEPOINT, SCRIPT, SHUTDOWN, SHOW, {"
+Syntax error in SQL statement "SALES_HEAD"; expected "SELECT, SET, SAVEPOINT, SCRIPT, SHUTDOWN, SHOW, {"; SQL statement:
+SALES_HEAD [42001-166]
+04-19 15:14:20 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: テーブル "N_MM_ITEM" が見つかりません
+Table "N_MM_ITEM" not found; SQL statement:
+INSERT INTO N_MM_ITEM VALUES('B001', '日替わり弁当', '2012-04-01', '2012-04-02', 'N') [42102-166]
+04-19 15:21:30 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: 列 "N_M_ITEM.ITEM_NAME" が見つかりません
+Column "N_M_ITEM.ITEM_NAME" not found; SQL statement:
+SELECT N_SALES_HEAD.TRAN_NO 取引番号, N_SALES_HEAD.TRAN_DATE 取引日時, N_M_ITEM.ITEM_NAME 商品名,N_SALES_DETAIL.DETAIL_NO 明細番号, N_SALES_DETAIL.ITEM_CD 商品コード,N_SALES_DETAIL.QTY 数量, N_SALES_DETAIL.PRICE 単価 
+FROM N_SALES_HEAD, N_SALES_DETAIL, M_ITEM 
+WHERE N_SALES_HEAD.TRAN_NO = N_SALES_DETAIL.TRAN_NO 
+AND N_SALES_DETAIL.ITEM_CD = N_M_ITEM.ITEM_CD [42122-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:138)
+	at org.h2.expression.Alias.optimize(Alias.java:47)
+	at org.h2.command.dml.Select.prepare(Select.java:799)
+	at org.h2.command.Parser.prepareCommand(Parser.java:218)
+	at org.h2.engine.Session.prepareLocal(Session.java:415)
+	at org.h2.engine.Session.prepareCommand(Session.java:364)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:164)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1311)
+	at org.h2.server.web.WebApp.query(WebApp.java:1001)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:964)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+04-19 15:21:30 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: SQLステートメントに文法エラーがあります "AND[*] N_SALES_HEAD.TRAN_DATE BETWEEN N_M_ITEM.START_DAY AND N_M_ITEM.END_DAY"; 期待されるステートメント "ALTER, ANALYZE, {"
+Syntax error in SQL statement "AND[*] N_SALES_HEAD.TRAN_DATE BETWEEN N_M_ITEM.START_DAY AND N_M_ITEM.END_DAY"; expected "ALTER, ANALYZE, {"; SQL statement:
+AND N_SALES_HEAD.TRAN_DATE BETWEEN N_M_ITEM.START_DAY AND N_M_ITEM.END_DAY [42001-166]
+04-19 15:22:04 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: SQLステートメントに文法エラーがあります "AND[*] N_SALES_HEAD.TRAN_DATE BETWEEN N_M_ITEM.START_DAY AND N_M_ITEM.END_DAY"; 期待されるステートメント "ALTER, ANALYZE, {"
+Syntax error in SQL statement "AND[*] N_SALES_HEAD.TRAN_DATE BETWEEN N_M_ITEM.START_DAY AND N_M_ITEM.END_DAY"; expected "ALTER, ANALYZE, {"; SQL statement:
+AND N_SALES_HEAD.TRAN_DATE BETWEEN N_M_ITEM.START_DAY AND N_M_ITEM.END_DAY [42001-166]
+04-19 15:22:58 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: SQLステートメントに文法エラーがあります "AND[*] (N_SALES_HEAD.TRAN_DATE BETWEEN N_M_ITEM.START_DAY AND N_M_ITEM.END_DAY)"; 期待されるステートメント "ALTER, ANALYZE, {"
+Syntax error in SQL statement "AND[*] (N_SALES_HEAD.TRAN_DATE BETWEEN N_M_ITEM.START_DAY AND N_M_ITEM.END_DAY)"; expected "ALTER, ANALYZE, {"; SQL statement:
+AND (N_SALES_HEAD.TRAN_DATE BETWEEN N_M_ITEM.START_DAY AND N_M_ITEM.END_DAY) [42001-166]
+04-19 15:26:00 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: 列 "N_M_ITEM.ITEM_NAME" が見つかりません
+Column "N_M_ITEM.ITEM_NAME" not found; SQL statement:
+SELECT N_SALES_HEAD.TRAN_NO 取引番号, N_SALES_HEAD.TRAN_DATE 取引日時, N_M_ITEM.ITEM_NAME 商品名,N_SALES_DETAIL.DETAIL_NO 明細番号, N_SALES_DETAIL.ITEM_CD 商品コード,N_SALES_DETAIL.QTY 数量, N_SALES_DETAIL.PRICE 単価 
+FROM N_SALES_HEAD, N_SALES_DETAIL, M_ITEM 
+WHERE N_SALES_HEAD.TRAN_NO = N_SALES_DETAIL.TRAN_NO 
+AND N_SALES_DETAIL.ITEM_CD = N_M_ITEM.ITEM_CD [42122-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:138)
+	at org.h2.expression.Alias.optimize(Alias.java:47)
+	at org.h2.command.dml.Select.prepare(Select.java:799)
+	at org.h2.command.Parser.prepareCommand(Parser.java:218)
+	at org.h2.engine.Session.prepareLocal(Session.java:415)
+	at org.h2.engine.Session.prepareCommand(Session.java:364)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:164)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1311)
+	at org.h2.server.web.WebApp.query(WebApp.java:1001)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:964)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+04-19 15:26:00 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: SQLステートメントに文法エラーがあります "AND[*] (N_SALES_HEAD.TRAN_DATE BETWEEN N_M_ITEM.START_DAY AND N_M_ITEM.END_DAY)"; 期待されるステートメント "ALTER, ANALYZE, {"
+Syntax error in SQL statement "AND[*] (N_SALES_HEAD.TRAN_DATE BETWEEN N_M_ITEM.START_DAY AND N_M_ITEM.END_DAY)"; expected "ALTER, ANALYZE, {"; SQL statement:
+AND (N_SALES_HEAD.TRAN_DATE BETWEEN N_M_ITEM.START_DAY AND N_M_ITEM.END_DAY) [42001-166]
+04-19 15:26:27 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: 列 "N_M_ITEM.ITEM_NAME" が見つかりません
+Column "N_M_ITEM.ITEM_NAME" not found; SQL statement:
+SELECT N_SALES_HEAD.TRAN_NO 取引番号, N_SALES_HEAD.TRAN_DATE 取引日時, N_M_ITEM.ITEM_NAME 商品名,N_SALES_DETAIL.DETAIL_NO 明細番号, N_SALES_DETAIL.ITEM_CD 商品コード,N_SALES_DETAIL.QTY 数量, N_SALES_DETAIL.PRICE 単価 
+FROM N_SALES_HEAD, N_SALES_DETAIL, M_ITEM 
+WHERE N_SALES_HEAD.TRAN_NO = N_SALES_DETAIL.TRAN_NO 
+AND N_SALES_DETAIL.ITEM_CD = N_M_ITEM.ITEM_CD
+AND (N_SALES_HEAD.TRAN_DATE BETWEEN N_M_ITEM.START_DAY AND N_M_ITEM.END_DAY) [42122-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:138)
+	at org.h2.expression.Alias.optimize(Alias.java:47)
+	at org.h2.command.dml.Select.prepare(Select.java:799)
+	at org.h2.command.Parser.prepareCommand(Parser.java:218)
+	at org.h2.engine.Session.prepareLocal(Session.java:415)
+	at org.h2.engine.Session.prepareCommand(Session.java:364)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:164)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1311)
+	at org.h2.server.web.WebApp.query(WebApp.java:1001)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:964)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+04-19 15:26:39 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: 列 "N_M_ITEM.ITEM_NAME" が見つかりません
+Column "N_M_ITEM.ITEM_NAME" not found; SQL statement:
+SELECT N_SALES_HEAD.TRAN_NO 取引番号, N_SALES_HEAD.TRAN_DATE 取引日時, N_M_ITEM.ITEM_NAME 商品名,N_SALES_DETAIL.DETAIL_NO 明細番号, N_SALES_DETAIL.ITEM_CD 商品コード,N_SALES_DETAIL.QTY 数量, N_SALES_DETAIL.PRICE 単価 
+FROM N_SALES_HEAD, N_SALES_DETAIL, M_ITEM 
+WHERE N_SALES_HEAD.TRAN_NO = N_SALES_DETAIL.TRAN_NO 
+AND N_SALES_DETAIL.ITEM_CD = N_M_ITEM.ITEM_CD
+AND N_SALES_HEAD.TRAN_DATE BETWEEN N_M_ITEM.START_DAY AND N_M_ITEM.END_DAY [42122-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:138)
+	at org.h2.expression.Alias.optimize(Alias.java:47)
+	at org.h2.command.dml.Select.prepare(Select.java:799)
+	at org.h2.command.Parser.prepareCommand(Parser.java:218)
+	at org.h2.engine.Session.prepareLocal(Session.java:415)
+	at org.h2.engine.Session.prepareCommand(Session.java:364)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:164)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1311)
+	at org.h2.server.web.WebApp.query(WebApp.java:1001)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:964)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+04-19 15:38:30 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: 列名 "ITEM_CD" があいまいです
+Ambiguous column name "ITEM_CD"; SQL statement:
+SELECT * FROM N_M_ITEM , N_M_ITEM [90059-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.expression.ExpressionColumn.mapColumn(ExpressionColumn.java:116)
+	at org.h2.expression.ExpressionColumn.mapColumns(ExpressionColumn.java:86)
+	at org.h2.command.dml.Select.init(Select.java:771)
+	at org.h2.command.Parser.parseSelect(Parser.java:1521)
+	at org.h2.command.Parser.parsePrepared(Parser.java:405)
+	at org.h2.command.Parser.parse(Parser.java:279)
+	at org.h2.command.Parser.parse(Parser.java:251)
+	at org.h2.command.Parser.prepareCommand(Parser.java:217)
+	at org.h2.engine.Session.prepareLocal(Session.java:415)
+	at org.h2.engine.Session.prepareCommand(Session.java:364)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:164)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1311)
+	at org.h2.server.web.WebApp.query(WebApp.java:1001)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:964)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+04-19 15:39:53 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: 列名 "ITEM_CD" があいまいです
+Ambiguous column name "ITEM_CD"; SQL statement:
+SELECT * FROM N_M_ITEM , N_M_ITEM [90059-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.expression.ExpressionColumn.mapColumn(ExpressionColumn.java:116)
+	at org.h2.expression.ExpressionColumn.mapColumns(ExpressionColumn.java:86)
+	at org.h2.command.dml.Select.init(Select.java:771)
+	at org.h2.command.Parser.parseSelect(Parser.java:1521)
+	at org.h2.command.Parser.parsePrepared(Parser.java:405)
+	at org.h2.command.Parser.parse(Parser.java:279)
+	at org.h2.command.Parser.parse(Parser.java:251)
+	at org.h2.command.Parser.prepareCommand(Parser.java:217)
+	at org.h2.engine.Session.prepareLocal(Session.java:415)
+	at org.h2.engine.Session.prepareCommand(Session.java:364)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:164)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1311)
+	at org.h2.server.web.WebApp.query(WebApp.java:1001)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:964)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+04-19 15:47:20 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: 列 "Y_END_DAY" が見つかりません
+Column "Y_END_DAY" not found; SQL statement:
+SELECT DISTINCT X.ITEM_CD FROM N_M_ITEM AS X, N_M_ITEM AS Y
+WHERE X.ITEM_CD = Y.ITEM_CD
+OR (X.START_DAY BETWEEN Y.START_DAY AND Y_END_DAY) [42122-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:138)
+	at org.h2.expression.Comparison.optimize(Comparison.java:159)
+	at org.h2.expression.ConditionAndOr.optimize(ConditionAndOr.java:127)
+	at org.h2.expression.ConditionAndOr.optimize(ConditionAndOr.java:127)
+	at org.h2.command.dml.Select.prepare(Select.java:802)
+	at org.h2.command.Parser.prepareCommand(Parser.java:218)
+	at org.h2.engine.Session.prepareLocal(Session.java:415)
+	at org.h2.engine.Session.prepareCommand(Session.java:364)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:164)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1311)
+	at org.h2.server.web.WebApp.query(WebApp.java:1001)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:964)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+04-19 15:51:11 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: order by 対象の式 "Y.ITEM_CD" は、結果リストに含まれる必要があります
+Order by expression "Y.ITEM_CD" must be in the result list in this case; SQL statement:
+SELECT DISTINCT X.ITEM_CD FROM N_M_ITEM AS X, N_M_ITEM AS Y
+WHERE (x.START_DAY between y.START_DAY and y.END_DAY 
+or x.END_DAY between y.START_DAY and y.END_DAY )
+and x.ITEM_CD <>y.ITEM_CD 
+order by x.ITEM_CD ,y.ITEM_CD [90068-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.command.dml.Query.initOrder(Query.java:420)
+	at org.h2.command.dml.Select.init(Select.java:712)
+	at org.h2.command.Parser.parseSelect(Parser.java:1521)
+	at org.h2.command.Parser.parsePrepared(Parser.java:405)
+	at org.h2.command.Parser.parse(Parser.java:279)
+	at org.h2.command.Parser.parse(Parser.java:251)
+	at org.h2.command.Parser.prepareCommand(Parser.java:217)
+	at org.h2.engine.Session.prepareLocal(Session.java:415)
+	at org.h2.engine.Session.prepareCommand(Session.java:364)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1111)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:164)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1311)
+	at org.h2.server.web.WebApp.query(WebApp.java:1001)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:964)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+04-19 16:09:26 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: SQLステートメントに文法エラーがあります "SELECT X.ITEM_CD FROM N_M_ITEM AS X, N_M_ITEM AS Y
+WHERE (X.START_DAY BETWEEN Y.START_DAY AND Y.END_DAY 
+OR X.END_DAY BETWEEN Y.START_DAY AND Y.END_DAY )
+AND X.ITEM_CD[*] =! Y.ITEM_CD"
+Syntax error in SQL statement "SELECT X.ITEM_CD FROM N_M_ITEM AS X, N_M_ITEM AS Y
+WHERE (X.START_DAY BETWEEN Y.START_DAY AND Y.END_DAY 
+OR X.END_DAY BETWEEN Y.START_DAY AND Y.END_DAY )
+AND X.ITEM_CD[*] =! Y.ITEM_CD"; SQL statement:
+SELECT X.ITEM_CD FROM N_M_ITEM AS X, N_M_ITEM AS Y
+WHERE (X.START_DAY BETWEEN Y.START_DAY AND Y.END_DAY 
+OR X.END_DAY BETWEEN Y.START_DAY AND Y.END_DAY )
+AND X.ITEM_CD =! Y.ITEM_CD [42000-166]
+04-19 16:15:11 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: SQLステートメントに文法エラーがあります "SELECT X.ITEM_CD FROM N_M_ITEM AS X, N_M_ITEM AS Y
+WHERE EXISTS((X[*].START_DAY BETWEEN Y.START_DAY AND Y.END_DAY 
+OR X.END_DAY BETWEEN Y.START_DAY AND Y.END_DAY )
+AND X.ITEM_CD = Y.ITEM_CD ) "; 期待されるステートメント "(, SELECT, FROM"
+Syntax error in SQL statement "SELECT X.ITEM_CD FROM N_M_ITEM AS X, N_M_ITEM AS Y
+WHERE EXISTS((X[*].START_DAY BETWEEN Y.START_DAY AND Y.END_DAY 
+OR X.END_DAY BETWEEN Y.START_DAY AND Y.END_DAY )
+AND X.ITEM_CD = Y.ITEM_CD ) "; expected "(, SELECT, FROM"; SQL statement:
+SELECT X.ITEM_CD FROM N_M_ITEM AS X, N_M_ITEM AS Y
+WHERE exists((X.START_DAY BETWEEN Y.START_DAY AND Y.END_DAY 
+OR X.END_DAY BETWEEN Y.START_DAY AND Y.END_DAY )
+AND X.ITEM_CD = Y.ITEM_CD ) [42001-166]
+04-20 10:43:39 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: "DATE" 定数 "1970-0101" を解析できません
+Cannot parse "DATE" constant "1970-0101"; SQL statement:
+INSERT INTO M_STAFF_ENTITY VALUES('S000', 'ダミー　１', '1970-0101', '2001-03-31', 'Y', 'SYSTEM', '2012-03-01 10:00:00', 'SYSTEM', '2012-03-01 10:00:00', 0) -- ('S000', STRINGDECODE('\u30c0\u30df\u30fc\u3000\uff11'), '1970-0101', '2001-03-31', 'Y', 'SYSTEM', '2012-03-01 10:00:00', 'SYSTEM', '2012-03-01 10:00:00', 0) [22007-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:158)
+	at org.h2.value.ValueDate.parse(ValueDate.java:70)
+	at org.h2.value.Value.convertTo(Value.java:817)
+	at org.h2.table.Column.convert(Column.java:143)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:112)
+	at org.h2.command.dml.Insert.update(Insert.java:84)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:73)
+	at org.h2.command.Command.executeUpdate(Command.java:226)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:177)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1311)
+	at org.h2.server.web.WebApp.query(WebApp.java:1001)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:964)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.IllegalArgumentException: 1970-0101
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:270)
+	at org.h2.value.ValueDate.parse(ValueDate.java:68)
+	... 15 more
+04-20 10:43:56 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: "DATE" 定数 "2012-03-01 10:00:00" を解析できません
+Cannot parse "DATE" constant "2012-03-01 10:00:00"; SQL statement:
+INSERT INTO M_STAFF_ENTITY VALUES('S000', 'ダミー　１', '1970-01-01', '2001-03-31', 'Y', 'SYSTEM', '2012-03-01 10:00:00', 'SYSTEM', '2012-03-01 10:00:00', 0) -- ('S000', STRINGDECODE('\u30c0\u30df\u30fc\u3000\uff11'), '1970-01-01', '2001-03-31', 'Y', 'SYSTEM', '2012-03-01 10:00:00', 'SYSTEM', '2012-03-01 10:00:00', 0) [22007-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:158)
+	at org.h2.value.ValueDate.parse(ValueDate.java:70)
+	at org.h2.value.Value.convertTo(Value.java:817)
+	at org.h2.table.Column.convert(Column.java:143)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:112)
+	at org.h2.command.dml.Insert.update(Insert.java:84)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:73)
+	at org.h2.command.Command.executeUpdate(Command.java:226)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:177)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1311)
+	at org.h2.server.web.WebApp.query(WebApp.java:1001)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:964)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.NumberFormatException: For input string: "01 10:00:00"
+	at java.lang.NumberFormatException.forInputString(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:274)
+	at org.h2.value.ValueDate.parse(ValueDate.java:68)
+	... 15 more
+04-20 10:44:43 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: "DATE" 定数 "2012-03-01 10:00:00" を解析できません
+Cannot parse "DATE" constant "2012-03-01 10:00:00"; SQL statement:
+INSERT INTO M_STAFF_ENTITY VALUES('S000', 'ダミー　１', '1970-01-01', '2001-03-31', 'Y', 'SYSTEM', '2012-03-01 10:00:00', 'SYSTEM', '2012-03-01 10:00:00', 0) -- ('S000', STRINGDECODE('\u30c0\u30df\u30fc\u3000\uff11'), '1970-01-01', '2001-03-31', 'Y', 'SYSTEM', '2012-03-01 10:00:00', 'SYSTEM', '2012-03-01 10:00:00', 0) [22007-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:158)
+	at org.h2.value.ValueDate.parse(ValueDate.java:70)
+	at org.h2.value.Value.convertTo(Value.java:817)
+	at org.h2.table.Column.convert(Column.java:143)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:112)
+	at org.h2.command.dml.Insert.update(Insert.java:84)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:73)
+	at org.h2.command.Command.executeUpdate(Command.java:226)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:177)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:152)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1311)
+	at org.h2.server.web.WebApp.query(WebApp.java:1001)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:964)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:967)
+	at org.h2.server.web.WebThread.process(WebThread.java:166)
+	at org.h2.server.web.WebThread.run(WebThread.java:93)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.NumberFormatException: For input string: "01 10:00:00"
+	at java.lang.NumberFormatException.forInputString(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at java.lang.Integer.parseInt(Unknown Source)
+	at org.h2.util.DateTimeUtils.parseDateValue(DateTimeUtils.java:274)
+	at org.h2.value.ValueDate.parse(ValueDate.java:68)
+	... 15 more
+04-20 10:57:12 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: SQLステートメントに文法エラーがあります "CREATE TABLE M_STAFF_ENTITY(STAFF_CD CHAR(4), STAFF_NAME CHAR(20), START_DAY DATE,END_DAY DATE, DEL_FLG CHAR(1), CREATOR CHAR(20), CREATED_TIMESTAMP TIMESTAMP,UPDATER CHAR(20), UPDATED_TIMESTAMP TIMESTAMP, VERSION INT, PRIMARY KEY STAFF_CD[*], START_DAY)"; 期待されるステートメント "HASH, ("
+Syntax error in SQL statement "CREATE TABLE M_STAFF_ENTITY(STAFF_CD CHAR(4), STAFF_NAME CHAR(20), START_DAY DATE,END_DAY DATE, DEL_FLG CHAR(1), CREATOR CHAR(20), CREATED_TIMESTAMP TIMESTAMP,UPDATER CHAR(20), UPDATED_TIMESTAMP TIMESTAMP, VERSION INT, PRIMARY KEY STAFF_CD[*], START_DAY)"; expected "HASH, ("; SQL statement:
+CREATE TABLE M_STAFF_ENTITY(STAFF_CD CHAR(4), STAFF_NAME CHAR(20), START_DAY DATE,END_DAY DATE, DEL_FLG CHAR(1), CREATOR CHAR(20), CREATED_TIMESTAMP TIMESTAMP,UPDATER CHAR(20), UPDATED_TIMESTAMP TIMESTAMP, VERSION INT, PRIMARY KEY STAFF_CD, START_DAY) [42001-166]
+04-20 11:25:15 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: テーブル "T_SAMPLE" が見つかりません
+Table "T_SAMPLE" not found; SQL statement:
+select  name from  t_sample  where  id = ? [42102-166]
+04-20 13:09:45 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: SQLステートメントに文法エラーがあります "SELECT * FROM M_STAFF_ENTITY WHILE STAFF_CD[*] = ?"
+Syntax error in SQL statement "SELECT * FROM M_STAFF_ENTITY WHILE STAFF_CD[*] = ?"; SQL statement:
+SELECT * FROM M_STAFF_ENTITY WHILE STAFF_CD = ? [42000-166]
+04-20 13:11:36 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: SQLステートメントに文法エラーがあります "SELECT * FROM M_STAFF_ENTITY WHILE STAFF_CD[*] = ?"
+Syntax error in SQL statement "SELECT * FROM M_STAFF_ENTITY WHILE STAFF_CD[*] = ?"; SQL statement:
+SELECT * FROM M_STAFF_ENTITY WHILE STAFF_CD = ? [42000-166]
+04-20 13:12:44 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: SQLステートメントに文法エラーがあります "SELECT * FROM M_STAFF_ENTITY WHILE STAFF_CD[*] = ?"
+Syntax error in SQL statement "SELECT * FROM M_STAFF_ENTITY WHILE STAFF_CD[*] = ?"; SQL statement:
+SELECT * FROM M_STAFF_ENTITY WHILE STAFF_CD = ? [42000-166]
+04-20 13:13:51 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: SQLステートメントに文法エラーがあります "SELECT * FROM M_STAFF_ENTITY WHILE STAFF_CD[*] = ?"
+Syntax error in SQL statement "SELECT * FROM M_STAFF_ENTITY WHILE STAFF_CD[*] = ?"; SQL statement:
+SELECT * FROM M_STAFF_ENTITY WHILE STAFF_CD = ? [42000-166]
+04-20 13:14:41 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: SQLステートメントに文法エラーがあります "SELECT * FROM M_STAFF_ENTITY WHILE STAFF_CD[*] = ?"
+Syntax error in SQL statement "SELECT * FROM M_STAFF_ENTITY WHILE STAFF_CD[*] = ?"; SQL statement:
+SELECT * FROM M_STAFF_ENTITY WHILE STAFF_CD = ? [42000-166]
+04-20 15:16:44 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: メソッドはクエリしかサポートしていません。executeQueryのかわりに、excecute、またはexecuteUpdateを使用してください
+Method is only allowed for a query. Use execute or executeUpdate instead of executeQuery; SQL statement:
+INSERT INTO M_STAFF_ENTITY VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?) [90002-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.message.DbException.get(DbException.java:135)
+	at org.h2.command.Prepared.query(Prepared.java:210)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:82)
+	at org.h2.command.Command.executeQuery(Command.java:187)
+	at org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:96)
+	at com.nakamurajoho.work510.dbaccess.DBAssessor.create(DBAssessor.java:220)
+	at com.nakamurajoho.work510.dbaccess.Test.main(Test.java:31)
+04-20 15:17:41 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: メソッドはクエリしかサポートしていません。executeQueryのかわりに、excecute、またはexecuteUpdateを使用してください
+Method is only allowed for a query. Use execute or executeUpdate instead of executeQuery; SQL statement:
+INSERT INTO M_STAFF_ENTITY VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?) [90002-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.message.DbException.get(DbException.java:135)
+	at org.h2.command.Prepared.query(Prepared.java:210)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:82)
+	at org.h2.command.Command.executeQuery(Command.java:187)
+	at org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:96)
+	at com.nakamurajoho.work510.dbaccess.DBAssessor.create(DBAssessor.java:220)
+	at com.nakamurajoho.work510.dbaccess.Test.main(Test.java:31)
+04-20 15:19:50 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: パラメータ "#7" がセットされていません
+Parameter "#7" is not set; SQL statement:
+INSERT INTO M_STAFF_ENTITY VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?) [90012-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.expression.Parameter.checkSet(Parameter.java:73)
+	at org.h2.command.Prepared.checkParameters(Prepared.java:162)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:81)
+	at org.h2.command.Command.executeQuery(Command.java:187)
+	at org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:96)
+	at com.nakamurajoho.work510.dbaccess.DBAssessor.create(DBAssessor.java:220)
+	at com.nakamurajoho.work510.dbaccess.Test.main(Test.java:31)
+04-20 15:20:07 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: パラメータ "#7" がセットされていません
+Parameter "#7" is not set; SQL statement:
+INSERT INTO M_STAFF_ENTITY VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?) [90012-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.expression.Parameter.checkSet(Parameter.java:73)
+	at org.h2.command.Prepared.checkParameters(Prepared.java:162)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:81)
+	at org.h2.command.Command.executeQuery(Command.java:187)
+	at org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:96)
+	at com.nakamurajoho.work510.dbaccess.DBAssessor.create(DBAssessor.java:220)
+	at com.nakamurajoho.work510.dbaccess.Test.main(Test.java:31)
+04-20 15:23:54 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: メソッドはクエリしかサポートしていません。executeQueryのかわりに、excecute、またはexecuteUpdateを使用してください
+Method is only allowed for a query. Use execute or executeUpdate instead of executeQuery; SQL statement:
+INSERT INTO M_STAFF_ENTITY VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?) [90002-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.message.DbException.get(DbException.java:135)
+	at org.h2.command.Prepared.query(Prepared.java:210)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:82)
+	at org.h2.command.Command.executeQuery(Command.java:187)
+	at org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:96)
+	at com.nakamurajoho.work510.dbaccess.DBAssessor.create(DBAssessor.java:220)
+	at com.nakamurajoho.work510.dbaccess.Test.main(Test.java:31)
+04-20 15:24:36 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: メソッドはクエリしかサポートしていません。executeQueryのかわりに、excecute、またはexecuteUpdateを使用してください
+Method is only allowed for a query. Use execute or executeUpdate instead of executeQuery; SQL statement:
+INSERT INTO M_STAFF_ENTITY VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?) [90002-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.message.DbException.get(DbException.java:135)
+	at org.h2.command.Prepared.query(Prepared.java:210)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:82)
+	at org.h2.command.Command.executeQuery(Command.java:187)
+	at org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:96)
+	at com.nakamurajoho.work510.dbaccess.DBAssessor.create(DBAssessor.java:220)
+	at com.nakamurajoho.work510.dbaccess.Test.main(Test.java:31)
+04-20 15:39:08 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: メソッドはクエリしかサポートしていません。executeQueryのかわりに、excecute、またはexecuteUpdateを使用してください
+Method is only allowed for a query. Use execute or executeUpdate instead of executeQuery; SQL statement:
+INSERT INTO M_STAFF_ENTITY VALUES('S006', '牧　慎一郎', '2012-06-01', '9999-12-31', '0', 'S001', '2012-04-20 03:36:28', 'S001', '2012-04-20 03:36:28', 0) [90002-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.get(DbException.java:146)
+	at org.h2.message.DbException.get(DbException.java:135)
+	at org.h2.command.Prepared.query(Prepared.java:210)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:82)
+	at org.h2.command.Command.executeQuery(Command.java:187)
+	at org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:96)
+	at com.nakamurajoho.work510.dbaccess.DBAssessor.create(DBAssessor.java:220)
+	at com.nakamurajoho.work510.dbaccess.Test.main(Test.java:31)
+04-20 15:44:42 jdbc[2]: exception
+org.h2.jdbc.JdbcSQLException: パラメータ "parameterIndex" に対する値 "1" が不正です
+Invalid value "1" for parameter "parameterIndex" [90008-166]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:329)
+	at org.h2.message.DbException.get(DbException.java:169)
+	at org.h2.message.DbException.getInvalidValueException(DbException.java:215)
+	at org.h2.jdbc.JdbcPreparedStatement.setParameter(JdbcPreparedStatement.java:1270)
+	at org.h2.jdbc.JdbcPreparedStatement.setString(JdbcPreparedStatement.java:327)
+	at com.nakamurajoho.work510.dbaccess.DBAssessor.create(DBAssessor.java:213)
+	at com.nakamurajoho.work510.dbaccess.Test.main(Test.java:31)
