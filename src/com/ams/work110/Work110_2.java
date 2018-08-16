@@ -3,16 +3,16 @@ package com.ams.work110;
 public class Work110_2 {
 
 	/**
-	 * •¶š—ñ‚ğ”äŠr‚·‚é
-	 * @param str1@”äŠr‚·‚é•¶š—ñ
-	 * @param str2@”äŠr‚·‚é•¶š—ñ
-	 * @return@”äŠrŒ‹‰Ê
+	 * æ–‡å­—åˆ—ã‚’æ¯”è¼ƒã™ã‚‹
+	 * @param str1ã€€æ¯”è¼ƒã™ã‚‹æ–‡å­—åˆ—
+	 * @param str2ã€€æ¯”è¼ƒã™ã‚‹æ–‡å­—åˆ—
+	 * @returnã€€æ¯”è¼ƒçµæœ
 	 * @throws IllegalArgumentException
 	 */
 
 	public int compare(String str1,String str2) throws IllegalArgumentException{
 		if(str1==null || str2==null) {
-			throw new IllegalArgumentException("ˆø”‚ªnull‚Å‚·B");
+			throw new IllegalArgumentException("å¼•æ•°ãŒnullã§ã™ã€‚");
 		}
 
 		if(str1==str2) {
