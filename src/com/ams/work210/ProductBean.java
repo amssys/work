@@ -3,82 +3,82 @@ package com.ams.work210;
 import java.math.BigDecimal;
 
 /**
- * ¤•iƒŒƒR[ƒhƒNƒ‰ƒX
+ * å•†å“ãƒ¬ã‚³ãƒ¼ãƒ‰ã‚¯ãƒ©ã‚¹
  * @author Myamagishi
  *
  */
 public class ProductBean {
 	/**
-	 * ¤•iƒR[ƒh
+	 * å•†å“ã‚³ãƒ¼ãƒ‰
 	 */
 	private String code;
 	
 	/**
-	 * ¤•i–¼
+	 * å•†å“å
 	 */
 	private String name;
 	
 	/**
-	 * ”„‰¿
+	 * å£²ä¾¡
 	 */
 	private BigDecimal price;
 	
 	/**
-	 * ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	 * ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	 */
 	public ProductBean(){};
 	
 	/**
-	 * ƒRƒ“ƒXƒgƒ‰ƒNƒ^
-	 * @param code ¤•iƒR[ƒh
-	 * @param name ¤•i–¼
-	 * @param price ”„‰¿
+	 * ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+	 * @param code å•†å“ã‚³ãƒ¼ãƒ‰
+	 * @param name å•†å“å
+	 * @param price å£²ä¾¡
 	 */
 	public ProductBean(String code, String name, BigDecimal price){
 		
 	}
 	
 	/**
-	 * ¤•iƒR[ƒh‚ğæ“¾
-	 * @return ¤•iƒR[ƒh
+	 * å•†å“ã‚³ãƒ¼ãƒ‰ã‚’å–å¾—
+	 * @return å•†å“ã‚³ãƒ¼ãƒ‰
 	 */
 	public String getCode() {
 		return code;
 	}
 	
 	/**
-	 * ¤•iƒR[ƒh‚ğİ’è
-	 * @param code ¤•iƒR[ƒh
+	 * å•†å“ã‚³ãƒ¼ãƒ‰ã‚’è¨­å®š
+	 * @param code å•†å“ã‚³ãƒ¼ãƒ‰
 	 */
 	public void setCode(String code) {
 		this.code = code;
 	}
 	/**
-	 * ¤•i–¼‚ğæ“¾
-	 * @return ¤•i–¼
+	 * å•†å“åã‚’å–å¾—
+	 * @return å•†å“å
 	 */
 	public String getName() {
 		return name;
 	}
 	
 	/**
-	 * ¤•i–¼‚ğİ’è
-	 * @param name ¤•i–¼
+	 * å•†å“åã‚’è¨­å®š
+	 * @param name å•†å“å
 	 */
 	public void setName(String name) {
 		this.name = name;
 	}
 	
 	/**
-	 * ”„‰¿‚ğİ’è
-	 * @return@”„‰¿
+	 * å£²ä¾¡ã‚’è¨­å®š
+	 * @returnã€€å£²ä¾¡
 	 */
 	public BigDecimal getPrice() {
 		return price;
 	}
 	
 	/**
-	 * ”„‰¿‚ğæ“¾
+	 * å£²ä¾¡ã‚’å–å¾—
 	 * @param price
 	 */
 	public void setPrice(BigDecimal price) {
@@ -86,14 +86,14 @@ public class ProductBean {
 	}
 	
 	/**
-	 * ¤•iƒR[ƒhƒNƒ‰ƒXî•ñ‚ğ•¶š—ñ‚Å•Ô‹p
+	 * å•†å“ã‚³ãƒ¼ãƒ‰ã‚¯ãƒ©ã‚¹æƒ…å ±ã‚’æ–‡å­—åˆ—ã§è¿”å´
 	 */
 	public String toString(){
 		return "code == " + code + " name == " + name +  " price == " + price;
 	}
 	
 	/**
-	 * ¤•iƒR[ƒhƒNƒ‰ƒXî•ñ‚ğ•\¦
+	 * å•†å“ã‚³ãƒ¼ãƒ‰ã‚¯ãƒ©ã‚¹æƒ…å ±ã‚’è¡¨ç¤º
 	 */
 	public void show(){
 		System.out.println(toString());

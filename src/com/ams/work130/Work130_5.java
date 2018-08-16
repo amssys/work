@@ -6,19 +6,19 @@ import java.util.Calendar;
 public class Work130_5 {
 
 	/**
-	 * Œ––“ú•t‚ğuYYYY-MM-DDv•¶š—ñ‚Å•Ô‚µ‚Ü‚·B
-	 * @param year ”N
-	 * @param month@Œ
-	 * @return@Œ––“ú•t
+	 * æœˆæœ«æ—¥ä»˜ã‚’ã€ŒYYYY-MM-DDã€æ–‡å­—åˆ—ã§è¿”ã—ã¾ã™ã€‚
+	 * @param year å¹´
+	 * @param monthã€€æœˆ
+	 * @returnã€€æœˆæœ«æ—¥ä»˜
 	 * @throws IllegalArgumentException
 	 */
 
 	public String getLasDayOfMonth(int year,int month) throws IllegalArgumentException{
 		if(year < 1900 || year > 2100) {
-			throw new IllegalArgumentException("”N‚ª•s³‚Å‚·B");
+			throw new IllegalArgumentException("å¹´ãŒä¸æ­£ã§ã™ã€‚");
 		}
 		if(month < 1 || month > 12) {
-			throw new IllegalArgumentException("Œ‚ª•s³‚Å‚·B");
+			throw new IllegalArgumentException("æœˆãŒä¸æ­£ã§ã™ã€‚");
 		}
 
 		Calendar cl = Calendar.getInstance();

@@ -7,15 +7,15 @@ import java.util.Date;
 public class Work130_4 {
 	
 	/**
-	 * uYYYY-MM-DDv•¶š—ñ‚ğ“ú•tƒIƒuƒWƒFƒNƒg‚É•ÏŠ·‚·‚éB
-	 * @param ymd@“ú•t•¶š—ñ
-	 * @return@“ú•tƒIƒuƒWƒFƒNƒg
+	 * ã€ŒYYYY-MM-DDã€æ–‡å­—åˆ—ã‚’æ—¥ä»˜ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã«å¤‰æ›ã™ã‚‹ã€‚
+	 * @param ymdã€€æ—¥ä»˜æ–‡å­—åˆ—
+	 * @returnã€€æ—¥ä»˜ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 	 * @throws IllegalArgumentException
 	 */
 	
 	public Date stringToDate(String ymd) throws IllegalArgumentException{
 		if(ymd == null) {
-			throw new IllegalArgumentException("ˆø”‚ªNULL‚Å‚·B");
+			throw new IllegalArgumentException("å¼•æ•°ãŒNULLã§ã™ã€‚");
 		}
 
 		if(ymd.matches("[0-9]{4}-[0-9]{2}-[0-9]{2}")) {
@@ -27,10 +27,10 @@ public class Work130_4 {
 				date = sdf.parse(ymd);
 				return date;
 			} catch (ParseException e) {
-				throw new IllegalArgumentException("‘¶İ‚µ‚È‚¢“ú•t‚Å‚·B");
+				throw new IllegalArgumentException("å­˜åœ¨ã—ãªã„æ—¥ä»˜ã§ã™ã€‚");
 			}
 
 		}
-		throw new IllegalArgumentException("“ú•t•¶š—ñ‚ÌŒ`®‚ª•s³‚Å‚·B");
+		throw new IllegalArgumentException("æ—¥ä»˜æ–‡å­—åˆ—ã®å½¢å¼ãŒä¸æ­£ã§ã™ã€‚");
 	}
 }

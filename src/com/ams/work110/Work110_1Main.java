@@ -3,14 +3,14 @@ package com.ams.work110;
 public class Work110_1Main {
 
 	/**
-	 * Work110_1実行クラス
-	 * @auther　nozomi
+	 * Work110_1螳溯｡後け繝ｩ繧ｹ
+	 * @auther縲nozomi
 	 */
 
 	public static void main(String args[]) {
 		Work110_1 testObj = new Work110_1();
 
-		System.out.println("ケースNo.1");
+		System.out.println("繧ｱ繝ｼ繧ｹNo.1");
 		try {
 			testObj.devideIntoChars(null);
 			System.out.println(testObj);
@@ -18,7 +18,7 @@ public class Work110_1Main {
 			System.out.println(e);
 		}
 
-		System.out.println("ケースNo.2");
+		System.out.println("繧ｱ繝ｼ繧ｹNo.2");
 		try {
 			testObj.devideIntoChars("ABC");
 			System.out.println(testObj);
@@ -26,7 +26,7 @@ public class Work110_1Main {
 			System.out.println(e);
 		}
 
-		System.out.println("ケースNo.3");
+		System.out.println("繧ｱ繝ｼ繧ｹNo.3");
 		try {
 			testObj.devideIntoChars("A");
 			System.out.println(testObj);
@@ -34,7 +34,7 @@ public class Work110_1Main {
 			System.out.println(e);
 		}
 
-		System.out.println("ケースNo.4");
+		System.out.println("繧ｱ繝ｼ繧ｹNo.4");
 		try {
 			testObj.devideIntoChars("");
 			System.out.println(testObj);

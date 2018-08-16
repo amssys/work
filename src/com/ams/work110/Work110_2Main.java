@@ -3,7 +3,7 @@ package com.ams.work110;
 public class Work110_2Main {
 
 	/**
-	 * Work110_2 実行クラス
+	 * Work110_2 螳溯｡後け繝ｩ繧ｹ
 	 * @param args
 	 */
 
@@ -11,49 +11,49 @@ public class Work110_2Main {
 
 		Work110_2 testObj  = new Work110_2();
 
-		System.out.println("ケースNo.1");
+		System.out.println("繧ｱ繝ｼ繧ｹNo.1");
 		try {
 			System.out.println(testObj.compare(null,null));
 		}catch(IllegalArgumentException e) {
 			System.out.println(e);
 		}
 
-		System.out.println("ケースNo.2");
+		System.out.println("繧ｱ繝ｼ繧ｹNo.2");
 		try {
 			System.out.println(testObj.compare(null,"ABC"));
 		}catch(IllegalArgumentException e) {
 			System.out.println(e);
 		}
 
-		System.out.println("ケースNo.3");
+		System.out.println("繧ｱ繝ｼ繧ｹNo.3");
 		try {
 			System.out.println(testObj.compare("ABC",null));
 		}catch(IllegalArgumentException e) {
 			System.out.println(e);
 		}
 
-		System.out.println("ケースNo.4");
+		System.out.println("繧ｱ繝ｼ繧ｹNo.4");
 		try {
 			System.out.println(testObj.compare("ABC","ABC"));
 		}catch(IllegalArgumentException e) {
 			System.out.println(e);
 		}
 
-		System.out.println("ケースNo.5");
+		System.out.println("繧ｱ繝ｼ繧ｹNo.5");
 		try {
 			System.out.println(testObj.compare("ABC",new String("ABC")));
 		}catch(IllegalArgumentException e) {
 			System.out.println(e);
 		}
 
-		System.out.println("ケースNo.6");
+		System.out.println("繧ｱ繝ｼ繧ｹNo.6");
 		try {
 			System.out.println(testObj.compare("ABC","abc"));
 		}catch(IllegalArgumentException e) {
 			System.out.println(e);
 		}
 
-		System.out.println("ケースNo.6");
+		System.out.println("繧ｱ繝ｼ繧ｹNo.6");
 		try {
 			System.out.println(testObj.compare("ABC","XYZ"));
 		}catch(IllegalArgumentException e) {

@@ -3,91 +3,91 @@ package com.ams.work130;
 public class Work130_2Main {
 
 	/**
-	 * Work130_2 実行クラス
+	 * Work130_2 螳溯｡後け繝ｩ繧ｹ
 	 * @param args
 	 */
 
 	public static void main(String args[]) {
 		Work130_2 testObj = new Work130_2();
 
-		System.out.println("ケースNo.1");
+		System.out.println("繧ｱ繝ｼ繧ｹNo.1");
 		try {
 			System.out.println(testObj.creatDate(1899,12,31));
 		}catch(IllegalArgumentException e) {
 			System.out.println(e);
 		}
 
-		System.out.println("ケースNo.2");
+		System.out.println("繧ｱ繝ｼ繧ｹNo.2");
 		try {
 			System.out.println(testObj.creatDate(1900,1,1));
 		}catch(IllegalArgumentException e) {
 			System.out.println(e);
 		}
 
-		System.out.println("ケースNo.3");
+		System.out.println("繧ｱ繝ｼ繧ｹNo.3");
 		try {
 			System.out.println(testObj.creatDate(2100,12,31));
 		}catch(IllegalArgumentException e) {
 			System.out.println(e);
 		}
 
-		System.out.println("ケースNo.4");
+		System.out.println("繧ｱ繝ｼ繧ｹNo.4");
 		try {
 			System.out.println(testObj.creatDate(2101,1,1));
 		}catch(IllegalArgumentException e) {
 			System.out.println(e);
 		}
 
-		System.out.println("ケースNo.5");
+		System.out.println("繧ｱ繝ｼ繧ｹNo.5");
 		try {
 			System.out.println(testObj.creatDate(1900,0,1));
 		}catch(IllegalArgumentException e) {
 			System.out.println(e);
 		}
 
-		System.out.println("ケースNo.6");
+		System.out.println("繧ｱ繝ｼ繧ｹNo.6");
 		try {
 			System.out.println(testObj.creatDate(1900,12,1));
 		}catch(IllegalArgumentException e) {
 			System.out.println(e);
 		}
 
-		System.out.println("ケースNo.7");
+		System.out.println("繧ｱ繝ｼ繧ｹNo.7");
 		try {
 			System.out.println(testObj.creatDate(1900,13,1));
 		}catch(IllegalArgumentException e) {
 			System.out.println(e);
 		}
 
-		System.out.println("ケースNo.8");
+		System.out.println("繧ｱ繝ｼ繧ｹNo.8");
 		try {
 			System.out.println(testObj.creatDate(1900,1,0));
 		}catch(IllegalArgumentException e) {
 			System.out.println(e);
 		}
 
-		System.out.println("ケースNo.9");
+		System.out.println("繧ｱ繝ｼ繧ｹNo.9");
 		try {
 			System.out.println(testObj.creatDate(1900,1,32));
 		}catch(IllegalArgumentException e) {
 			System.out.println(e);
 		}
 
-		System.out.println("ケースNo.10");
+		System.out.println("繧ｱ繝ｼ繧ｹNo.10");
 		try {
 			System.out.println(testObj.creatDate(2011,2,29));
 		}catch(IllegalArgumentException e) {
 			System.out.println(e);
 		}
 
-		System.out.println("ケースNo.11");
+		System.out.println("繧ｱ繝ｼ繧ｹNo.11");
 		try {
 			System.out.println(testObj.creatDate(2012,2,29));
 		}catch(IllegalArgumentException e) {
 			System.out.println(e);
 		}
 
-		System.out.println("ケースNo.12");
+		System.out.println("繧ｱ繝ｼ繧ｹNo.12");
 		try {
 			System.out.println(testObj.creatDate(2012,5,1));
 		}catch(IllegalArgumentException e) {

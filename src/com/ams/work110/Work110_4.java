@@ -3,20 +3,20 @@ package com.ams.work110;
 public class Work110_4 {
 
 	/**
-	 * Œg‘Ñ“d˜b”Ô†‚Å‚ ‚é‚©‚ğ”»’è‚·‚éB
-	 * @param telNo@“d˜b”Ô†
+	 * æºå¸¯é›»è©±ç•ªå·ã§ã‚ã‚‹ã‹ã‚’åˆ¤å®šã™ã‚‹ã€‚
+	 * @param telNoã€€é›»è©±ç•ªå·
 	 * @return
 	 * @throws IllegalArgumentException
 	 */
 	public boolean isMobilePhoneNumber(String telNo) throws IllegalArgumentException{
 		if(telNo == null) {
-			throw new IllegalArgumentException("”»’è‘ÎÛ‚Å‚Í‚ ‚è‚Ü‚¹‚ñB");
+			throw new IllegalArgumentException("åˆ¤å®šå¯¾è±¡ã§ã¯ã‚ã‚Šã¾ã›ã‚“ã€‚");
 		}
 
 		telNo = telNo.trim();
 
-		if(telNo.matches(".*A.*") || telNo.matches(".*‚ .*") || telNo.matches(".*\\*.*")) {
-			throw new IllegalArgumentException("”¼Šp”šˆÈŠO‚ğg—p‚µ‚Ä‚¢‚Ü‚·B");
+		if(telNo.matches(".*A.*") || telNo.matches(".*ã‚.*") || telNo.matches(".*\\*.*")) {
+			throw new IllegalArgumentException("åŠè§’æ•°å­—ä»¥å¤–ã‚’ä½¿ç”¨ã—ã¦ã„ã¾ã™ã€‚");
 		}
 	
 		if(telNo.matches("[0-9]{3}-[0-9]{4}-[0-9]{4}")) {
@@ -26,10 +26,10 @@ public class Work110_4 {
 			
 		}else if(telNo.matches("[0-9]{3}-[0-9]{4}-")){
 			if(telNo.length() != 13) {
-				throw new IllegalArgumentException("•¶š”‚ª•s³‚Å‚·B");
+				throw new IllegalArgumentException("æ–‡å­—æ•°ãŒä¸æ­£ã§ã™ã€‚");
 			}
 		}else {
-			throw new IllegalArgumentException("‹æØ‚è‚ÌˆÊ’u‚ª•s³‚Å‚·B");
+			throw new IllegalArgumentException("åŒºåˆ‡ã‚Šã®ä½ç½®ãŒä¸æ­£ã§ã™ã€‚");
 		}
 		return false;	
 	}

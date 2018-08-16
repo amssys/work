@@ -4,7 +4,7 @@ public class Work110_4Main {
 	public static void main(String args[]) {
 		Work110_4 testObj = new Work110_4();
 
-		System.out.println("ÉPÅ[ÉXNo.1");
+		System.out.println("„Ç±„Éº„ÇπNo.1");
 		try {
 			System.out.println(testObj.isMobilePhoneNumber("090-1234-5678"));
 			System.out.println(testObj.isMobilePhoneNumber("090-1234-5679    "));
@@ -13,49 +13,49 @@ public class Work110_4Main {
 			System.out.println(e);
 		}
 
-		System.out.println("ÉPÅ[ÉXNo.2");
+		System.out.println("„Ç±„Éº„ÇπNo.2");
 		try {
 			System.out.println(testObj.isMobilePhoneNumber(null));
 		}catch(IllegalArgumentException e) {
 			System.out.println(e);
 		}
 
-		System.out.println("ÉPÅ[ÉXNo.3");
+		System.out.println("„Ç±„Éº„ÇπNo.3");
 		try {
 			System.out.println(testObj.isMobilePhoneNumber("090-1234-567"));
 		}catch(IllegalArgumentException e) {
 			System.out.println(e);
 		}
 
-		System.out.println("ÉPÅ[ÉXNo.4");
+		System.out.println("„Ç±„Éº„ÇπNo.4");
 		try {
 			System.out.println(testObj.isMobilePhoneNumber("090-1234-56789"));
 		}catch(IllegalArgumentException e) {
 			System.out.println(e);
 		}
 
-		System.out.println("ÉPÅ[ÉXNo.5");
+		System.out.println("„Ç±„Éº„ÇπNo.5");
 		try {
 			System.out.println(testObj.isMobilePhoneNumber("090-1234-567A"));
 		}catch(IllegalArgumentException e) {
 			System.out.println(e);
 		}
 
-		System.out.println("ÉPÅ[ÉXNo.6");
+		System.out.println("„Ç±„Éº„ÇπNo.6");
 		try {
-			System.out.println(testObj.isMobilePhoneNumber("090-1234-567Ç†"));
+			System.out.println(testObj.isMobilePhoneNumber("090-1234-567„ÅÇ"));
 		}catch(IllegalArgumentException e) {
 			System.out.println(e);
 		}
 
-		System.out.println("ÉPÅ[ÉXNo.7");
+		System.out.println("„Ç±„Éº„ÇπNo.7");
 		try {
 			System.out.println(testObj.isMobilePhoneNumber("090-1234*5678"));
 		}catch(IllegalArgumentException e) {
 			System.out.println(e);
 		}
 
-		System.out.println("ÉPÅ[ÉXNo.8");
+		System.out.println("„Ç±„Éº„ÇπNo.8");
 		try {
 			System.out.println(testObj.isMobilePhoneNumber("090-1234567-8"));
 		}catch(IllegalArgumentException e) {
@@ -72,42 +72,42 @@ public class Work110_4Main {
 			System.out.println(e);
 		}
 
-		System.out.println("ÉPÅ[ÉXNo.9");
+		System.out.println("„Ç±„Éº„ÇπNo.9");
 		try {
 			System.out.println(testObj.isMobilePhoneNumber("080-1234-5678"));
 		}catch(IllegalArgumentException e) {
 			System.out.println(e);
 		}
 
-		System.out.println("ÉPÅ[ÉXNo.10");
+		System.out.println("„Ç±„Éº„ÇπNo.10");
 		try {
 			System.out.println(testObj.isMobilePhoneNumber("070-1234-5678"));
 		}catch(IllegalArgumentException e) {
 			System.out.println(e);
 		}
 
-		System.out.println("ÉPÅ[ÉXNo11");
+		System.out.println("„Ç±„Éº„ÇπNo11");
 		try {
 			System.out.println(testObj.isMobilePhoneNumber("060-1234-5678"));
 		}catch(IllegalArgumentException e) {
 			System.out.println(e);
 		}
 
-		System.out.println("ÉPÅ[ÉXNo.12");
+		System.out.println("„Ç±„Éº„ÇπNo.12");
 		try {
 			System.out.println(testObj.isMobilePhoneNumber("990-1234-5678"));
 		}catch(IllegalArgumentException e) {
 			System.out.println(e);
 		}
 
-		System.out.println("ÉPÅ[ÉXNo.13");
+		System.out.println("„Ç±„Éº„ÇπNo.13");
 		try {
 			System.out.println(testObj.isMobilePhoneNumber("980-1234-5678"));
 		}catch(IllegalArgumentException e) {
 			System.out.println(e);
 		}
 
-		System.out.println("ÉPÅ[ÉXNo.14");
+		System.out.println("„Ç±„Éº„ÇπNo.14");
 		try {
 			System.out.println(testObj.isMobilePhoneNumber("970-1234-5678"));
 		}catch(IllegalArgumentException e) {

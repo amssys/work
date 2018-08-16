@@ -7,24 +7,24 @@ import java.util.Date;
 public class Work130_2 {
 
 	/**
-	 * “ú•tƒIƒuƒWƒFƒNƒg‚ğ¶¬‚·‚éB
-	 * @param year ”N
-	 * @param month@Œ
-	 * @param day@“ú
-	 * @return@“ú•tƒIƒuƒWƒFƒNƒg
+	 * æ—¥ä»˜ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ç”Ÿæˆã™ã‚‹ã€‚
+	 * @param year å¹´
+	 * @param monthã€€æœˆ
+	 * @param dayã€€æ—¥
+	 * @returnã€€æ—¥ä»˜ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 	 * @throws IllegalArgumentException
 	 */
 
 	public Date creatDate(int year,int month,int day) throws IllegalArgumentException {
 
 		if(year<1900 || year>2100) {
-			throw new IllegalArgumentException("”N‚ª•s³‚Å‚·B");
+			throw new IllegalArgumentException("å¹´ãŒä¸æ­£ã§ã™ã€‚");
 		}
 		if(month <= 0 || month > 12) {
-			throw new IllegalArgumentException("Œ‚ª•s³‚Å‚·B");
+			throw new IllegalArgumentException("æœˆãŒä¸æ­£ã§ã™ã€‚");
 		}
 		if(day <= 0 || day > 31) {
-			throw new IllegalArgumentException("“ú‚ª•s³‚Å‚·B");
+			throw new IllegalArgumentException("æ—¥ãŒä¸æ­£ã§ã™ã€‚");
 		}
 
 		Calendar cl = Calendar.getInstance();
@@ -38,7 +38,7 @@ public class Work130_2 {
 			cl.set(Calendar.DATE, day);
 			time = cl.getTime();
 		}catch(IllegalArgumentException e) {
-			throw new IllegalArgumentException("‘¶İ‚µ‚È‚¢“ú•t‚Å‚·B");
+			throw new IllegalArgumentException("å­˜åœ¨ã—ãªã„æ—¥ä»˜ã§ã™ã€‚");
 		}
 
 		return time;

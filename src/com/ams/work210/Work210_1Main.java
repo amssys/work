@@ -41,7 +41,7 @@ public class Work210_1Main {
 
 		System.out.println("No.6");
 		try {
-			System.out.println(testObj.createRecord(new String[] { "4903110006770", "毎朝の食パン", "138" }));
+			System.out.println(testObj.createRecord(new String[] { "4903110006770", "豈取悃縺ｮ鬟溘ヱ繝ｳ", "138" }));
 		}catch(IllegalArgumentException e) {
 			System.out.println(e);
 		}
@@ -55,7 +55,7 @@ public class Work210_1Main {
 
 		System.out.println("No.8");
 		try {
-			System.out.println(testObj.createRecord(new String[] { "4903110006770", "毎朝の食パン", null }));
+			System.out.println(testObj.createRecord(new String[] { "4903110006770", "豈取悃縺ｮ鬟溘ヱ繝ｳ", null }));
 		}catch(IllegalArgumentException e) {
 			System.out.println(e);
 		}

@@ -1,4 +1,4 @@
-﻿package com.ams.work000;
+package com.ams.work000;
 
 public class Work000 {
 

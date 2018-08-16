@@ -5,22 +5,22 @@ import java.util.Date;
 
 public class Work130_1 {
 	/**
-	 * “ú•tî•ñ‚ğæ‚èo‚·
-	 * @param date@“ú•tƒIƒuƒWƒFƒNƒg
-	 * @param type@í•Êi Y=”N, M=Œ, D=“ú )
-	 * @return@”N or Œ or “ú
+	 * æ—¥ä»˜æƒ…å ±ã‚’å–ã‚Šå‡ºã™
+	 * @param dateã€€æ—¥ä»˜ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
+	 * @param typeã€€ç¨®åˆ¥ï¼ˆ Y=å¹´, M=æœˆ, D=æ—¥ )
+	 * @returnã€€å¹´ or æœˆ or æ—¥
 	 * @throws IllegalArgumentException
 	 */
 	public int extractYMD(Date date,String type) throws IllegalArgumentException {
 
 		if(date == null) {
-			throw new IllegalArgumentException("“ú•tƒIƒuƒWƒFƒNƒg‚ªNULL‚Å‚·B");
+			throw new IllegalArgumentException("æ—¥ä»˜ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãŒNULLã§ã™ã€‚");
 		}
 		if(type == null) {
-			throw new IllegalArgumentException("í•Ê‚ª‚ ‚è‚Ü‚¹‚ñB");
+			throw new IllegalArgumentException("ç¨®åˆ¥ãŒã‚ã‚Šã¾ã›ã‚“ã€‚");
 		}
 		if(type != "Y" && type != "M" && type != "D") {
-			throw new IllegalArgumentException("í•Ê‚ª•s³‚Å‚·B");
+			throw new IllegalArgumentException("ç¨®åˆ¥ãŒä¸æ­£ã§ã™ã€‚");
 		}
 
 		Calendar c1 = Calendar.getInstance();

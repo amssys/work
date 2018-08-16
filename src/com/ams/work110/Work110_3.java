@@ -2,11 +2,11 @@ package com.ams.work110;
 
 public class Work110_3 {
 	/**
-	 * •¶š—ñ‚Ì‚P•”‚ğ”²‚«æ‚Á‚Äæ‚èo‚·B
-	 * @param str@•¶š—ñ
-	 * @param start@Ø‚èæ‚èŠJnˆÊ’u
-	 * @param length@Ø‚èæ‚é•¶š”
-	 * @return@æ‚èo‚µ‚½•¶š—ñ
+	 * æ–‡å­—åˆ—ã®ï¼‘éƒ¨ã‚’æŠœãå–ã£ã¦å–ã‚Šå‡ºã™ã€‚
+	 * @param strã€€æ–‡å­—åˆ—
+	 * @param startã€€åˆ‡ã‚Šå–ã‚Šé–‹å§‹ä½ç½®
+	 * @param lengthã€€åˆ‡ã‚Šå–ã‚‹æ–‡å­—æ•°
+	 * @returnã€€å–ã‚Šå‡ºã—ãŸæ–‡å­—åˆ—
 	 * @throws IllegalArgumentException
 	 */
 
@@ -14,10 +14,10 @@ public class Work110_3 {
 		start = start - 1;
 		length = start + length;
 		if(str == null) {
-			throw new IllegalArgumentException("ˆø”‚ªNULL‚Å‚·B");
+			throw new IllegalArgumentException("å¼•æ•°ãŒNULLã§ã™ã€‚");
 		}
 		if(start + 1 > str.length() || start + 1 <= 0 || length-start > str.length() || length - start < 0) {
-			throw new IllegalArgumentException("Ø‚èæ‚è”ÍˆÍ‚ª•s³‚Å‚·B");
+			throw new IllegalArgumentException("åˆ‡ã‚Šå–ã‚Šç¯„å›²ãŒä¸æ­£ã§ã™ã€‚");
 		}
 
 		String estr = str.substring(start,length);

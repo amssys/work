@@ -5,9 +5,9 @@ import java.math.BigDecimal;
 public class Work210_1 {
 
 	/**
-	 * ƒŒƒR[ƒh‚ğì¬‚·‚éB
-	 * @param record@¤•iî•ñ
-	 * @return@¤•iƒŒƒR[ƒh
+	 * ãƒ¬ã‚³ãƒ¼ãƒ‰ã‚’ä½œæˆã™ã‚‹ã€‚
+	 * @param recordã€€å•†å“æƒ…å ±
+	 * @returnã€€å•†å“ãƒ¬ã‚³ãƒ¼ãƒ‰
 	 * @throws IllegalArgumentException
 	 */
 
@@ -15,10 +15,10 @@ public class Work210_1 {
 		ProductBean pb = new ProductBean();
 
 		if (record == null) {
-			throw new IllegalArgumentException("ˆø”‚Ì’l‚ªNULL‚Å‚·B");
+			throw new IllegalArgumentException("å¼•æ•°ã®å€¤ãŒNULLã§ã™ã€‚");
 		}
 		if (record.length != 3) {
-			throw new IllegalArgumentException("ˆø”‚Ì—v‘f”‚ª•s³‚Å‚·B");
+			throw new IllegalArgumentException("å¼•æ•°ã®è¦ç´ æ•°ãŒä¸æ­£ã§ã™ã€‚");
 		}
 
 		if (record[2] == null) {
@@ -27,7 +27,7 @@ public class Work210_1 {
 			try {
 //				int price = Integer.parseInt(record[2]);
 			}catch(IllegalArgumentException e) {
-				throw new IllegalArgumentException("ˆø”‚Ì‘æ3—v‘f‚ª”’l‰»‚Å‚«‚Ü‚¹‚ñB");
+				throw new IllegalArgumentException("å¼•æ•°ã®ç¬¬3è¦ç´ ãŒæ•°å€¤åŒ–ã§ãã¾ã›ã‚“ã€‚");
 			}
 		}
 
