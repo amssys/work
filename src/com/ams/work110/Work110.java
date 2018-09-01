@@ -1,81 +1,104 @@
 package com.ams.work110;
 
-/**
- * Work110の解答<BR>
- */
+
 public class Work110 {
-	/**
-	 * 文字列を1文字ずつに分解する<BR>
-	 * 作成者:ams<BR>
-	 * @param str 文字列<BR>
-	 * @return divideChars 分解した文字の配列<BR>
-	 * @throws IllegalArgumentException 引数がNULLの場合<BR>
+
+	private char[] dstr;
+
+	/**	@param str 分解される文字列
+	 * @return 分解された文字列
+	 * @throws IllegalArgumentException
 	 */
+
 	public char[] divideIntoChars(String str) throws IllegalArgumentException {
 		if (str == null) {
-			throw new IllegalArgumentException("引数がNULLです");
+			throw new IllegalArgumentException("引数がNULLです。");
 		}
-		/** 解答を記入 */
-		return null;
+
+		int num = str.length();
+		char[] dstr = new char[num];
+		for (int i = 0; i < num; i++) {
+			dstr[i] = str.charAt(i);
+		}
+
+		this.dstr = dstr;
+		return dstr;
 	}
 
-	/**
-	 * 文字列を比較する<BR>
-	 * 作成者:ams<BR>
-	 * @param str1 比較する文字列<BR>
-	 * @param str2 比較される文字列<BR>
-	 * @return resultNo<BR>
-	 *         0: 同じオブジェクトである<BR>
-	 *         1: 異なるオブジェクトだが同じ値である<BR>
-	 *         2: 大文字小文字を区別しなければ同じ値である<BR>
-	 *         9: 上記のいずれにも該当しない<BR>
-	 * @throws IllegalArgumentException 引数のいずれかがNULLの場合
-	 */
-	public int compare(String str1, String str2) throws IllegalArgumentException {
-		if (str1 == null || str2 == null) {
-			throw new IllegalArgumentException("引数がNULLです");
+	@Override
+	public String toString() {
+		String result = "[";
+
+		for (int i = 0; i < dstr.length; i++) {
+			result += "'" + dstr[i] + "'";
+			if(i < dstr.length - 1) {
+				result += ",";
+			}
 		}
-		/** 解答を記入 */
-		return 0;
+		result += "]";
+		return result;
 	}
 
-	/**
-	 * 文字列の一部を切り取って取り出す<BR>
-	 * 作成者:ams<BR>
-	 * @param str 切り取られる文字列<BR>
-	 * @param start 切り取り開始位置<BR>
-	 * @param length 切り取る文字数<BR>
-	 * @return resultStr 取り出した文字列<BR>
-	 * @throws IllegalArgumentException<BR>
-	 *             引数のいずれかがNULLの場合<BR>
-	 *             存在しない範囲を指定して文字列を切り取ろうとした場合
-	 */
-	public String extractString(String str, int start, int length)
-			throws IllegalArgumentException {
-		if (str == null) {
-			throw new IllegalArgumentException("引数がNULLです");
+
+
+	public int compare(String str1,String str2) throws IllegalArgumentException{
+		if(str1==null || str2==null) {
+			throw new IllegalArgumentException("引数がnullです。");
 		}
-		/** 解答を記入 */
-		return null;
+
+		if(str1==str2) {
+			return 0;
+
+		}else if(str1.equals(str2)) {
+			return 1;
+
+		}else if(!(str1.equals(str2)) && str1.equalsIgnoreCase(str2)) {
+			return 2;
+
+		} else return 9;
 	}
 
-	/**
-	 * 携帯電話番号であるか判定する<BR>
-	 * （090, 080, 070 で始まるものが携帯電話番号である）<BR>
-	 * 作成者:ams<BR>
-	 * @param telNo 電話番号<BR>
-	 * @return true: 携帯電話番号である<BR>
-	 *         false: 携帯電話番号ではない<BR>
-	 * @throws IllegalArgumentException
-	 *             引数がNULLの場合<BR>
-	 *             引数の形式が正しくない場合（正しい形式：3桁4桁4桁のハイフン区切り（計13文字））
-	 */
-	public boolean isMobilePhoneNumber(String telNo)
-			throws IllegalArgumentException {
-		if (telNo == null) {
-			throw new IllegalArgumentException("判定対象がありません");
+
+
+	public String extractString(String str,int start,int length) throws IllegalArgumentException{
+		start = start - 1;
+		length = start + length;
+		if(str == null) {
+			throw new IllegalArgumentException("引数がNULLです。");
 		}
-		/** 解答を記入 */
+		if(start + 1 > str.length() || start + 1 <= 0 || length-start > str.length() || length - start < 0) {
+			throw new IllegalArgumentException("切り取り範囲が不正です。");
+		}
+
+		String estr = str.substring(start,length);
+		return estr;
+	}
+
+
+
+	public boolean isMobilePhoneNumber(String telNo) throws IllegalArgumentException{
+		if(telNo == null) {
+			throw new IllegalArgumentException("判定対象ではありません。");
+		}
+
+		telNo = telNo.trim();
+
+		if(telNo.matches(".*A.*") || telNo.matches(".*あ.*") || telNo.matches(".*\\*.*")) {
+			throw new IllegalArgumentException("半角数字以外を使用しています。");
+		}
+
+		if(telNo.matches("[0-9]{3}-[0-9]{4}-[0-9]{4}")) {
+			if(telNo.matches(".*070-.*") || telNo.matches(".*080-.*") || telNo.matches(".*090-.*")) {
+				return true;
+			}
+
+		}else if(telNo.matches("[0-9]{3}-[0-9]{4}-")){
+			if(telNo.length() != 13) {
+				throw new IllegalArgumentException("文字数が不正です。");
+			}
+		}else {
+			throw new IllegalArgumentException("区切りの位置が不正です。");
+		}
 		return false;
 	}
 }

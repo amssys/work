@@ -34,11 +34,11 @@ public class ProductDto {
 	 * コンストラクタ
 	 *
 	 * @param code
-	 *            商品コード
+	 * 商品コード
 	 * @param name
-	 *            商品名
+	 * 商品名
 	 * @param price
-	 *            売価
+	 * 売価
 	 */
 	public ProductDto(String code, String name, BigDecimal price) {
 		this.code = code;
@@ -48,7 +48,6 @@ public class ProductDto {
 
 	/**
 	 * 商品コードを取得
-	 *
 	 * @return 商品コード
 	 */
 	public String getCode() {
@@ -59,7 +58,7 @@ public class ProductDto {
 	 * 商品コードを設定
 	 *
 	 * @param code
-	 *            商品コード
+	 * 商品コード
 	 */
 	public void setCode(String code) {
 		this.code = code;
