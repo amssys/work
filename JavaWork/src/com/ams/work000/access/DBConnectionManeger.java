@@ -15,7 +15,7 @@ public class DBConnectionManeger {
 	/**
 	 * DBプロパティファイル場所をファイル名
 	 */
-	private static final String DB_PROPERTIES = "com.ams.work000.dbaccess.db_access";
+	private static final String DB_PROPERTIES = "com.ams.work000.dbaccess.db_access.properties";
 
 	/**
 	 * コンストラクタ
