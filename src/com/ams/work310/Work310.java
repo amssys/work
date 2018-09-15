@@ -8,24 +8,30 @@ import java.util.List;
 public class Work310 {
 
 	/**
-	 *レコードを作成する。
+	 *Listオブジェクト（要素：文字列）を生成する。
 	 * @record[] コード番号、名前、値段入力
 	 * @return コード番号、名前、値段で返す
 	 * @throws IllegalArgumentException コードがnull、record.lengthが3以外の時にエラー
 	 */
-	public List<String> createRecord(String[] record) throws IllegalArgumentException {
+	public List<String> createList(String[] record) throws IllegalArgumentException {
 		if (record == null) {
 			throw new IllegalArgumentException();
 		}
 
-		List<String> result = new ArrayList<>();
+		List<String> elements = new ArrayList<>();
 		for (int i = 0; i < record.length; i++) {
-		result.addAll(Arrays.asList(record[i]));
+		elements.addAll(Arrays.asList(record[i]));
 		}
-		return result;
+		return elements;
 	}
 
 
+	/**
+	 * Listエレメントを作成する。
+	 * @param elements
+	 * @return
+	 * @throws IllegalArgumentException
+	 */
 	public List<ProductBean> createRecordList(String[][] elements) throws IllegalArgumentException {
 		if (elements == null) {
 			throw new IllegalArgumentException();
