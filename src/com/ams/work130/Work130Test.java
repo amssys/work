@@ -20,7 +20,6 @@ public class Work130Test {
 	 * テスト結果の確認：<BR>
 	 *   実行結果が 実行:52/52 エラー:0 失敗:0 となっていたらテスト合格<BR>
 	 */
-
 	@Test(expected = IllegalArgumentException.class)
 	public void extractYMDのケース1() throws Exception {
 	Work130 work = new Work130();

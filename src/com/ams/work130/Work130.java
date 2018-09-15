@@ -8,6 +8,7 @@ import java.util.Date;
 
 public class Work130 {
 
+
 	/**
 	 * 日付情報を取り出す
 	 * @param date　日付オブジェクト
@@ -95,7 +96,6 @@ public class Work130 {
 	 * @return　日付文字列
 	 * @throws IllegalArgumentException
 	 */
-
 	public String dateToString(Date date) throws IllegalArgumentException {
 		if(date == null) {
 			throw new IllegalArgumentException("引数がNULLです。");
@@ -114,7 +114,6 @@ public class Work130 {
 	 * @return　日付オブジェクト
 	 * @throws IllegalArgumentException
 	 */
-
 	public Date stringToDate(String ymd) throws IllegalArgumentException{
 		if(ymd == null) {
 			throw new IllegalArgumentException("引数がNULLです。");
