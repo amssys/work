@@ -233,7 +233,9 @@ public class Work110Test {
 	@Test(expected = IllegalArgumentException.class)
 	public void isMobilePhoneNumberのケース8_3() throws Exception {
 		Work110 work = new Work110();
+//		System.out.println("test");
 		work.isMobilePhoneNumber("09012345678");
+//		System.out.println(work.isMobilePhoneNumber("09012345678"));
 	}
 
 	@Test

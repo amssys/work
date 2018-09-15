@@ -5,11 +5,12 @@ public class Work110 {
 
 	private char[] dstr;
 
-	/**	@param str 分解される文字列
+	/**
+	 * 文字列を１文字ずつに分解する。
+	 * 	@param str 分解される文字列
 	 * @return 分解された文字列
 	 * @throws IllegalArgumentException
 	 */
-
 	public char[] divideIntoChars(String str) throws IllegalArgumentException {
 		if (str == null) {
 			throw new IllegalArgumentException("引数がNULLです。");
@@ -40,7 +41,13 @@ public class Work110 {
 	}
 
 
-
+/**
+ * 文字列を比較する。
+ * @param str1 比較する文字列
+ * @param str2 比較する文字列
+ * @return 比較結果
+ * @throws IllegalArgumentException
+ */
 	public int compare(String str1,String str2) throws IllegalArgumentException{
 		if(str1==null || str2==null) {
 			throw new IllegalArgumentException("引数がnullです。");
@@ -59,7 +66,14 @@ public class Work110 {
 	}
 
 
-
+/**
+ * 文字列の一部を切り取って取り出す。
+ * @param str 文字列
+ * @param start 切取り開始位置
+ * @param length 切り取る文字数
+ * @return 切り出した文字列
+ * @throws IllegalArgumentException
+ */
 	public String extractString(String str,int start,int length) throws IllegalArgumentException{
 		start = start - 1;
 		length = start + length;
@@ -75,7 +89,12 @@ public class Work110 {
 	}
 
 
-
+/**
+ * 携帯電話番号であるか判定する。
+ * @param telNo 電話番号
+ * @return 判定結果
+ * @throws IllegalArgumentException
+ */
 	public boolean isMobilePhoneNumber(String telNo) throws IllegalArgumentException{
 		if(telNo == null) {
 			throw new IllegalArgumentException("判定対象ではありません。");
