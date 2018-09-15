@@ -8,13 +8,13 @@ import java.math.BigDecimal;
 import org.junit.Test;
 
 /**
- * Work120実行クラス
+ * Work210実行クラス
  *
  * テスト実行方法<BR>
  *	右クリック → 実行 → JUnitテスト<BR>
  *
  * テスト結果の確認:<BR>
- * 	実行結果が 実行:11/11 エラー:0 失敗:0 となっていたらテスト合格<BR>
+ * 	実行結果が 実行:8/8 エラー:0 失敗:0 となっていたらテスト合格<BR>
  *
  */
 public class Work210Test {
@@ -59,13 +59,19 @@ public class Work210Test {
 		String[] str = {"4903110006770","毎朝の食パン","138"};
 		ProductDto actual = work.createRecord(str);
 		ProductDto expected = new ProductDto(str[0],str[1],new BigDecimal(str[2]));
+//		System.out.println(actual.getCode());
+//		System.out.println(expected.getCode());
+//		System.out.println(actual.getName());
+//		System.out.println(expected.getName());
+//		System.out.println(actual.getPrice());
+//		System.out.println(expected.getPrice());
 		assertThat(actual.getCode(), is(expected.getCode()));
 		assertThat(actual.getName(), is(expected.getName()));
 		assertThat(actual.getPrice(), is(expected.getPrice()));
 	}
 
-	
-	
+
+
 	@Test
 	public void createRecordのケース7() throws Exception {
 		Work210 work = new Work210();
